@@ -1,6 +1,8 @@
 package com.project;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Examen {
 
@@ -11,8 +13,30 @@ public class Examen {
         this.naam = naam;
         this.vragen = vragen;
     }
-    public Examen(String naam) {
-        this.naam = naam;
+    // deze constructor leek mij (peter) handiger omdat het direct uit een file kan lezen
+    public Examen(String pathname) {
+
+        try {
+            File file = new File(pathname);
+            Scanner scanner = new Scanner(file);
+
+            // aanmaken van de naam doormiddel van de naam van de file
+            naam = file.getName();
+
+            // aanmaken van de vragen in de file
+            while (scanner.hasNext()) {
+                Vraag vraag = new Vraag(scanner.nextLine(), scanner.nextLine());
+                vragen.add(vraag);
+
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+
+
     }
 
     public String getNaam() {
@@ -25,11 +49,13 @@ public class Examen {
     public void setVragen(ArrayList<Vraag> vragen) {
         this.vragen = vragen;
     }
+    // de toString heb ik toegevoegd om snel te kunnen lezen wat er in het object wordt opgeslagen voor de tests
     @Override
     public String toString() {
         return "Examen: "+ naam +", aantal vragen: "+ vragen.size();
     }
 }
+
 
 class Vraag {
     private String vraag;
