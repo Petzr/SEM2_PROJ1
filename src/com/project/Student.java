@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Student {
 
     private String naam;
-    private String studentenNummer;
-    private static ArrayList<String> alleStudentenNummers;
-    private ArrayList<Examen> geslaagdeExamen;
+    private int studentenNummer;
+    private static ArrayList<Integer> alleStudentenNummers;
+    private ArrayList<Examen> geslaagdeExamen = new ArrayList<>();
 
-    public Student(String naam, String studentenNummer) {
+    public Student(String naam, int studentenNummer) {
         this.naam = naam;
         this.studentenNummer = studentenNummer;
     }
@@ -17,10 +17,14 @@ public class Student {
     public String getNaam() {
         return naam;
     }
-    public String getStudentenNummer() {
+    public int getStudentenNummer() {
         return studentenNummer;
     }
     public ArrayList<Examen> getGeslaagdeExamen() {
         return geslaagdeExamen;
+    }
+
+    public void addGeslaagdExamen(Examen examen) {
+        geslaagdeExamen.add(examen);
     }
 }

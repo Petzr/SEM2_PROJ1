@@ -11,6 +11,9 @@ public class Examen {
         this.naam = naam;
         this.vragen = vragen;
     }
+    public Examen(String naam) {
+        this.naam = naam;
+    }
 
     public String getNaam() {
         return naam;
@@ -19,6 +22,13 @@ public class Examen {
         return vragen;
     }
 
+    public void setVragen(ArrayList<Vraag> vragen) {
+        this.vragen = vragen;
+    }
+    @Override
+    public String toString() {
+        return "Examen: "+ naam +", aantal vragen: "+ vragen.size();
+    }
 }
 
 class Vraag {
