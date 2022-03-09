@@ -49,6 +49,12 @@ class Vraag {
     public String getAntwoord() {
         return antwoord;
     }
-
+    @Override
+    public String toString() {
+        return "{" +
+                "vraag='" + vraag + '\'' +
+                ", antwoord='" + antwoord + '\'' +
+                '}';
+    }
 }
 

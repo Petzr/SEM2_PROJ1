@@ -31,8 +31,9 @@ public class Main {
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNext()) {
-                Vraag vraag = new Vraag(scanner.nextLine());
+                Vraag vraag = new Vraag(scanner.nextLine(), scanner.nextLine());
                 vragen.add(vraag);
+
             }
         }
         catch (Exception e) {
