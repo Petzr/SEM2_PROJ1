@@ -13,7 +13,8 @@ public class Main {
 
         System.out.println(student1.getGeslaagdeExamen());
 
-        Examen engels = createExamen();
+        Examen engels = createExamen("Resources/EngelsExamenVragen.txt");
+        System.out.println(engels.getVragen());
         System.out.println(engels.getNaam());
 
         student1.addGeslaagdExamen(engels);
@@ -21,9 +22,24 @@ public class Main {
 
     }
 
-    public static Examen createExamen(){
+    public static Examen createExamen(String pathname){
         Examen examen = new Examen("Engels examen");
         ArrayList<Vraag> vragen = new ArrayList<>();
+
+        try {
+            File file = new File(pathname);
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNext()) {
+                Vraag vraag = new Vraag(scanner.nextLine());
+                vragen.add(vraag);
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+        examen.setVragen(vragen);
 
         return examen;
 

@@ -39,6 +39,9 @@ class Vraag {
         this.vraag = vraag;
         this.antwoord = antwoord;
     }
+    public Vraag(String vraag) {
+        this.vraag = vraag;
+    }
 
     public String getVraag() {
         return vraag;
