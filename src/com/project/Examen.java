@@ -3,6 +3,7 @@ package com.project;
 import java.util.ArrayList;
 
 public class Examen {
+
     private String naam;
     private ArrayList<Vraag> vragen = new ArrayList<>();
 
