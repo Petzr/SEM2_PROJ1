@@ -1,6 +1,20 @@
-1. Wat is 50+23?
+Wat is 50 + 23?
 73
-2. Wat is 86+15?
+Wat is 86 + 15?
 101
-3. Wat is 54-32?
+Wat is 54 - 32?
 22
+Wat is 11 * 11?
+121
+Wat is 54 / 9?
+6
+Wat is 12 + 13 + 25 + 50?
+100
+Wat is 3 * 3 * 3?
+27
+Wat is 1000 / 20?
+50
+Wat is 77 + 33?
+110
+Wat is 3 * 4 - 13?
+-1
