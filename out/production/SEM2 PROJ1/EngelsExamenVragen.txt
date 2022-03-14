@@ -1,4 +1,20 @@
-1. Is "easy" in het Nederlands "makkelijk"?
+Is "easy" in het Nederlands "makkelijk"?
 ja
-2. Is "different" in het Nederlands "fruit"?
+Is "different" in het Nederlands "fruit"?
+nee
+Is "seeing" in het Nederlands "zien"?
+ja
+Is "studying" in het Nederlands "stuiteren"?
+nee
+Is "fighting" in het Nederlands "vechten"?
+ja
+Is "monkey" in het Nederlands "aap"?
+ja
+Is "Math" in het Nederlands "wiskunde"?
+ja
+Is "space" in het Nederlands "ruimte"?
+ja
+Is "sending" in het Nederlands "bericht"?
+nee
+Is "paying" in het Nederlands "spelen"?
 nee
