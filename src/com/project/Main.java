@@ -6,6 +6,38 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void menu(ArrayList<Student> array) // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        System.out.println(
+                "1) Lijst met examens\n" +
+                        "2) Lijst met studenten\n" +
+                        "3) Nieuwe student inschrijven\n" +
+                        "4) Student verwijderen\n" +
+                        "5) Examen afnemen\n" +
+                        "6) Is student geslaagd voor test?\n" +
+                        "7) Welke examens heeft student gehaald?\n" +
+                        "8) Welke student heeft de meeste examens gehaald?\n" +
+                        "0) Exit\n" +
+                        "Uw keuze: ");
+        int input = scanner.nextInt();
+        switch (input) {
+            case 1: ; break;
+            case 2: lijstStudenten(array); menu(array);
+            case 3: nieuwStudent(array); menu(array);
+            case 4: verwijderStudent(array); menu(array);
+            case 5: ; break;
+            case 6: ; break;
+            case 7: ; break;
+            case 8: ; break;
+            case 0:
+                System.out.println("Fijne dag nog verder!"); break;
+            default:
+                System.out.println("Probeer het opnieuw!"); menu(array);
+        }
+    }
+
     public static void lijstExamen() {
 
     }
@@ -25,6 +57,7 @@ public class Main {
         String naam = scanner.nextLine();
         Integer nummer = StudentNummer.getNummer();
         array.add(new Student(naam, nummer));
+        System.out.println("Student toegevoegt!");
     }
 
     public static void verwijderStudent(ArrayList<Student> array) {
@@ -88,39 +121,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
-
         ArrayList<Student> lijstStudent = new ArrayList<>();
 
         // begin programma
-        System.out.println(
-                        "1) Lijst met examens\n" +
-                        "2) Lijst met studenten\n" +
-                        "3) Nieuwe student inschrijven\n" +
-                        "4) Student verwijderen\n" +
-                        "5) Examen afnemen\n" +
-                        "6) Is student geslaagd voor test?\n" +
-                        "7) Welke examens heeft student gehaald?\n" +
-                        "8) Welke student heeft de meeste examens gehaald?\n" +
-                        "0) Exit\n" +
-                        "Uw keuze: ");
 
-        Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
 
-        switch (input) {
-            case 1: ; break;
-            case 2: ; break;
-            case 3: ; break;
-            case 4: ; break;
-            case 5: ; break;
-            case 6: ; break;
-            case 7: ; break;
-            case 8: ; break;
-            case 0: ; break;
-            default: ; break;
-        }
+        menu(lijstStudent); // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
     }
 
 }
