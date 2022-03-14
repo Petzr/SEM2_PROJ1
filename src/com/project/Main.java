@@ -5,20 +5,28 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void menu() {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
+        Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
+        Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
+
+        Student student1 = new Student("Peter", 21092036);
+
+
+        // begin programma
         System.out.println(
                 "1) Lijst met examens\n" +
-                "2) Lijst met studenten\n" +
-                "3) Nieuwe student inschrijven\n" +
-                "4) Student verwijderen\n" +
-                "5) Examen afnemen\n" +
-                "6) Is student geslaagd voor test?\n" +
-                "7) Welke examens heeft student gehaald?\n" +
-                "8) Welke student heeft de meeste examens gehaald?\n" +
-                "0) Exit\n" +
-                "Uw keuze: ");
+                        "2) Lijst met studenten\n" +
+                        "3) Nieuwe student inschrijven\n" +
+                        "4) Student verwijderen\n" +
+                        "5) Examen afnemen\n" +
+                        "6) Is student geslaagd voor test?\n" +
+                        "7) Welke examens heeft student gehaald?\n" +
+                        "8) Welke student heeft de meeste examens gehaald?\n" +
+                        "0) Exit\n" +
+                        "Uw keuze: ");
+
+        Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
 
         switch (input) {
@@ -33,23 +41,6 @@ public class Main {
             case 0: ; break;
             default: ; break;
         }
-    }
-
-    public static void main(String[] args) {
-
-        // maken van test student
-	    Student student1 = new Student("Peter", 21092036);
-        System.out.println(student1.getNaam());
-
-        System.out.println(student1.getGeslaagdeExamen());
-
-        // maken van test examen
-        Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
-        System.out.println(engels.getVragen());
-        System.out.println(engels.getNaam());
-
-        student1.addGeslaagdExamen(engels);
-        System.out.println(student1.getGeslaagdeExamen());
     }
 
 }
