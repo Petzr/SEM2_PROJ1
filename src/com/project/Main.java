@@ -8,7 +8,8 @@ public class Main {
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("1) Lijst met examens\n" +
+        System.out.println(
+                "1) Lijst met examens\n" +
                 "2) Lijst met studenten\n" +
                 "3) Nieuwe student inschrijven\n" +
                 "4) Student verwijderen\n" +
@@ -17,8 +18,7 @@ public class Main {
                 "7) Welke examens heeft student gehaald?\n" +
                 "8) Welke student heeft de meeste examens gehaald?\n" +
                 "0) Exit\n" +
-                "Uw keuze:\n");
-
+                "Uw keuze: ");
     }
 
     public static void main(String[] args) {
