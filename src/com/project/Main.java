@@ -5,6 +5,38 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void lijstExamen() {
+
+    }
+
+    public static void lijstStudenten() {
+
+    }
+
+    public static Student nieuwStudent() {
+
+    }
+
+    public static void verwijderStudent() {
+
+    }
+
+    public static void examenMaken() {
+
+    }
+
+    public static void studentGeslaagd() {
+
+    }
+
+    public static void examenBehaaldDoorStudent() {
+
+    }
+
+    public static void meesteExamenGehaald() {
+
+    }
+
     public static void main(String[] args) {
 
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
