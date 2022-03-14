@@ -3,6 +3,10 @@ package com.project;
 
 public class Main {
 
+    public static void menu() {
+
+    }
+
     public static void main(String[] args) {
 
         // maken van test student
