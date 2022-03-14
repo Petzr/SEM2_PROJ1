@@ -17,8 +17,13 @@ public class Main {
         }
     }
 
-    public static Student nieuwStudent(String naam, int studentenNummer) {
-        return new Student(naam, studentenNummer);
+    public static void nieuwStudent(ArrayList<Student> array) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Geef naam: ");
+        String naam = scanner.nextLine();
+        System.out.print("Geef studentnummer: ");
+        int nummer = scanner.nextInt();
+        array.add(new Student(naam, nummer));
     }
 
     public static void verwijderStudent() {
@@ -45,9 +50,9 @@ public class Main {
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
 
         ArrayList<Student> lijstStudent = new ArrayList<>();
-        Student student1 = new Student("Peter", 21092036);
-        lijstStudent.add(student1);
-        System.out.println(lijstStudent.get(0).getStudentenNummer());
+        nieuwStudent(lijstStudent);
+        nieuwStudent(lijstStudent);
+        System.out.println(lijstStudent.size());
 
 
         // begin programma
