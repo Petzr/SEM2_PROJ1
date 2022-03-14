@@ -33,10 +33,6 @@ public class Examen {
         catch (Exception e) {
             System.out.println(e);
         }
-
-
-
-
     }
 
     public String getNaam() {
