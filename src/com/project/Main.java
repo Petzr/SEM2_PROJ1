@@ -13,8 +13,8 @@ public class Main {
 
     }
 
-    public static Student nieuwStudent() {
-
+    public static Student nieuwStudent(String naam, int studentenNummer) {
+        return new Student(naam, studentenNummer)
     }
 
     public static void verwijderStudent() {
