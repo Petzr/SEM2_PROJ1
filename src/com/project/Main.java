@@ -11,9 +11,10 @@ public class Main {
     }
 
     public static void lijstStudenten(ArrayList<Student> array) {
-        for (int i = 0; i < array.size(); i++)
+        System.out.println("Lijst met studenten:");
+        for (Student student : array)
         {
-            System.out.println(array.get(i).getStudentenNummer() + " " + array.get(i).getNaam());
+            System.out.println(student.getStudentenNummer() + " " + student.getNaam());
         }
     }
 
@@ -22,12 +23,23 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
         String naam = scanner.nextLine();
-        System.out.print("Geef studentnummer: ");
-        int nummer = scanner.nextInt();
+        Integer nummer = StudentNummer.getNummer();
         array.add(new Student(naam, nummer));
     }
 
-    public static void verwijderStudent() {
+    public static void verwijderStudent(ArrayList<Student> array) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Geef het studentnummer: ");
+        int nummer = scanner.nextInt();
+        for (int i = 0; i < array.size(); i++)
+        {
+            if (nummer == array.get(i).getStudentenNummer())
+            {
+                System.out.println(array.get(i).getNaam() + " verwijdert.");
+                array.remove(i);
+                break;
+            } else {}
+        }
     }
 
     public static void examenMaken(Examen examen) {
@@ -80,10 +92,6 @@ public class Main {
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
 
         ArrayList<Student> lijstStudent = new ArrayList<>();
-        nieuwStudent(lijstStudent);
-        nieuwStudent(lijstStudent);
-        System.out.println(lijstStudent.size());
-
 
         // begin programma
         System.out.println(

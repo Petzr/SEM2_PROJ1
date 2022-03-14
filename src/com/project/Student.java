@@ -28,3 +28,15 @@ public class Student {
         geslaagdeExamen.add(examen);
     }
 }
+
+class StudentNummer
+{
+    private static Integer laatsteNummer = 10000000;
+    private Integer nummer;
+
+    public static Integer getNummer() {
+        Integer nummer = laatsteNummer + 1;
+        laatsteNummer = nummer;
+        return nummer;
+    }
+}
