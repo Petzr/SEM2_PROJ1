@@ -1,9 +1,14 @@
 package com.project;
 
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void menu() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Kies optie: ");
 
     }
 
