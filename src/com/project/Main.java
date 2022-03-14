@@ -17,7 +17,8 @@ public class Main {
         }
     }
 
-    public static void nieuwStudent(ArrayList<Student> array) {
+    public static void nieuwStudent(ArrayList<Student> array)
+    {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
         String naam = scanner.nextLine();
