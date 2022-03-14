@@ -19,6 +19,9 @@ public class Main {
         student1.addGeslaagdExamen(engels);
         System.out.println(student1.getGeslaagdeExamen());
 
+
+        System.out.println("hello");
+
     }
 
 }
