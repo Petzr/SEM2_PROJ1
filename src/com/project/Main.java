@@ -20,9 +20,9 @@ public class Main {
         System.out.println(student1.getGeslaagdeExamen());
 
 
-        System.out.println("hello");
+        System.out.println("doei");
 
-        System.out.println("dag");
+        System.out.println("hello");
 
     }
 
