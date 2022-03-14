@@ -19,6 +19,20 @@ public class Main {
                 "8) Welke student heeft de meeste examens gehaald?\n" +
                 "0) Exit\n" +
                 "Uw keuze: ");
+        int input = scanner.nextInt();
+
+        switch (input) {
+            case 1: ; break;
+            case 2: ; break;
+            case 3: ; break;
+            case 4: ; break;
+            case 5: ; break;
+            case 6: ; break;
+            case 7: ; break;
+            case 8: ; break;
+            case 0: ; break;
+            default: ; break;
+        }
     }
 
     public static void main(String[] args) {
