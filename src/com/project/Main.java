@@ -10,7 +10,7 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println(
+        System.out.print(
                 "1) Lijst met examens\n" +
                         "2) Lijst met studenten\n" +
                         "3) Nieuwe student inschrijven\n" +
@@ -24,9 +24,9 @@ public class Main {
         int input = scanner.nextInt();
         switch (input) {
             case 1: ; break;
-            case 2: lijstStudenten(array); menu(array);
-            case 3: nieuwStudent(array); menu(array);
-            case 4: verwijderStudent(array); menu(array);
+            case 2: lijstStudenten(array); menu(array); break;
+            case 3: nieuwStudent(array); menu(array); break;
+            case 4: verwijderStudent(array); menu(array); break;
             case 5: ; break;
             case 6: ; break;
             case 7: ; break;
@@ -34,7 +34,7 @@ public class Main {
             case 0:
                 System.out.println("Fijne dag nog verder!"); break;
             default:
-                System.out.println("Probeer het opnieuw!"); menu(array);
+                System.out.println("Probeer het opnieuw!"); menu(array); break;
         }
     }
 
