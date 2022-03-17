@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
-    ArrayList<Examen> alleExamens = new ArrayList<>();
-    ArrayList<Student> alleStudenten = new ArrayList<>();
+    static ArrayList<Examen> alleExamens = new ArrayList<>();
+    static ArrayList<Student> alleStudenten = new ArrayList<>();
 
     public static void lijstExamen() {
+        for (Examen examen : alleExamens) {
+            System.out.printf(
+                    "Examen naam: %s, aantal vragen bij examen: %d\n", examen.getNaam(), examen.getVragen().size());
+        }
 
     }
 
