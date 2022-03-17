@@ -4,7 +4,7 @@ package com.project;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Menu {
 
     public static void menu(ArrayList<Student> array) // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
     {
