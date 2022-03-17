@@ -76,34 +76,6 @@ public class Main {
     }
 
     public static void examenMaken(Examen examen) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Welkom bij het examen "+ examen.getNaam());
-        System.out.println("Het examen heeft "+ examen.getVragen().size() +"\n");
-        System.out.println("type ANNULEREN om te stoppen met het examen. Ready? ");
-
-        int vragenGoed = 0;
-        for (Vraag vraag : examen.getVragen()) {
-            System.out.println(vraag.getVraag());
-
-            if (scanner.nextLine().equals(vraag.getAntwoord())) {
-                System.out.println("Goed, ");
-                vragenGoed++;
-            }
-            else {
-                System.out.println("Fout, ");
-            }
-            System.out.println("Het goede antwoord is: "+ vraag.getAntwoord());
-        }
-        System.out.println("Dat was het einde van het examen.");
-        System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
-
-        if (vragenGoed < examen.getVragen().size()/2) {
-            System.out.println("Helaas, je hebt het examen niet gehaald.");
-        }
-        else {
-            System.out.println("Goed gedaan, je hebt het examen gehaald.");
-        }
 
 
     }

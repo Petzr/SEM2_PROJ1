@@ -42,41 +42,36 @@ public class Examen {
         return vragen;
     }
 
-    public void setVragen(ArrayList<Vraag> vragen) {
-        this.vragen = vragen;
-    }
-    // de toString heb ik toegevoegd om snel te kunnen lezen wat er in het object wordt opgeslagen voor de tests
-    @Override
-    public String toString() {
-        return "Examen: "+ naam +", aantal vragen: "+ vragen.size();
-    }
-}
+    public void examenAfnemen() {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Welkom bij het examen "+ getNaam());
+        System.out.println("Het examen heeft "+ getVragen().size() +"\n");
 
-class Vraag {
-    private String vraag;
-    private String antwoord;
+        int vragenGoed = 0;
+        for (Vraag vraag : getVragen()) {
+            System.out.println(vraag.getVraag());
 
-    public Vraag(String vraag, String antwoord) {
-        this.vraag = vraag;
-        this.antwoord = antwoord;
-    }
-    public Vraag(String vraag) {
-        this.vraag = vraag;
+            if (scanner.nextLine().equals(vraag.getAntwoord())) {
+                System.out.println("Goed, ");
+                vragenGoed++;
+            }
+            else {
+                System.out.println("Fout, ");
+            }
+            System.out.println("Het goede antwoord is: "+ vraag.getAntwoord());
+        }
+        System.out.println("Dat was het einde van het examen.");
+        System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
+
+        if (vragenGoed < getVragen().size()/2) {
+            System.out.println("Helaas, je hebt het examen niet gehaald.");
+        }
+        else {
+            System.out.println("Goed gedaan, je hebt het examen gehaald.");
+        }
+
     }
 
-    public String getVraag() {
-        return vraag;
-    }
-    public String getAntwoord() {
-        return antwoord;
-    }
-    @Override
-    public String toString() {
-        return "{" +
-                "vraag='" + vraag + '\'' +
-                ", antwoord='" + antwoord + '\'' +
-                '}';
-    }
 }
 
