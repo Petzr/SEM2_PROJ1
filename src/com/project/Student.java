@@ -13,6 +13,10 @@ public class Student {
         this.naam = naam;
         this.studentenNummer = studentenNummer;
     }
+    public Student(String naam) {
+        this.naam = naam;
+
+    }
 
     public String getNaam() {
         return naam;

@@ -15,21 +15,20 @@ public class School {
 
     }
 
-    public static void lijstStudenten(ArrayList<Student> array) {
+    public static void lijstStudenten() {
         System.out.println("Lijst met studenten:");
-        for (Student student : array)
+        for (Student student : alleStudenten)
         {
-            System.out.println(student.getStudentenNummer() + " " + student.getNaam());
+            System.out.println(student.getStudentenNummer() + ", " + student.getNaam());
         }
     }
 
-    public static void nieuwStudent(ArrayList<Student> array)
+    public static void nieuwStudent()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
         String naam = scanner.nextLine();
-        Integer nummer = StudentNummer.getNummer();
-        array.add(new Student(naam, nummer));
+        alleStudenten.add(new Student(naam));
         System.out.println("Student toegevoegt!");
     }
 
