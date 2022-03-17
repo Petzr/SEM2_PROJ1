@@ -6,8 +6,8 @@ public class Student {
 
     private String naam;
     private int studentenNummer;
-    private static ArrayList<Integer> alleStudentenNummers;
-    private ArrayList<Examen> geslaagdeExamen = new ArrayList<>();
+    private ArrayList<Examen> geslaagdVoorExamens = new ArrayList<>();
+    private static ArrayList<Integer> alleStudentenNummers = new ArrayList<>();
 
     public Student(String naam, int studentenNummer) {
         this.naam = naam;
@@ -25,22 +25,13 @@ public class Student {
         return studentenNummer;
     }
     public ArrayList<Examen> getGeslaagdeExamen() {
-        return geslaagdeExamen;
+        return geslaagdVoorExamens;
+    }
+    public static ArrayList<Integer> getAlleStudentenNummers() {
+        return alleStudentenNummers;
     }
 
     public void addGeslaagdExamen(Examen examen) {
-        geslaagdeExamen.add(examen);
-    }
-}
-
-class StudentNummer
-{
-    private static Integer laatsteNummer = 10000000;
-    private Integer nummer;
-
-    public static Integer getNummer() {
-        Integer nummer = laatsteNummer + 1;
-        laatsteNummer = nummer;
-        return nummer;
+        geslaagdVoorExamens.add(examen);
     }
 }

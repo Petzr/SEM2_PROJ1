@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void menu(ArrayList<Student> array) // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
+    public static void lijstMenu() // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
@@ -24,9 +24,9 @@ public class Menu {
         int input = scanner.nextInt();
         switch (input) {
             case 1: ; break;
-            case 2: lijstStudenten(array); menu(array); break;
-            case 3: nieuwStudent(array); menu(array); break;
-            case 4: verwijderStudent(array); menu(array); break;
+            case 2: ; lijstMenu(); break;
+            case 3: ; lijstMenu(); break;
+            case 4: ; lijstMenu(); break;
             case 5: ; break;
             case 6: ; break;
             case 7: ; break;
@@ -34,63 +34,21 @@ public class Menu {
             case 0:
                 System.out.println("Fijne dag nog verder!"); break;
             default:
-                System.out.println("Probeer het opnieuw!"); menu(array); break;
+                System.out.println("Probeer het opnieuw!"); lijstMenu(); break;
         }
     }
 
-    public static void lijstExamen() {
+    public void studentMaaktExamen() {
 
     }
 
-    public static void lijstStudenten(ArrayList<Student> array) {
-        System.out.println("Lijst met studenten:");
-        for (Student student : array)
-        {
-            System.out.println(student.getStudentenNummer() + " " + student.getNaam());
-        }
-    }
-
-    public static void nieuwStudent(ArrayList<Student> array)
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Geef naam: ");
-        String naam = scanner.nextLine();
-        Integer nummer = StudentNummer.getNummer();
-        array.add(new Student(naam, nummer));
-        System.out.println("Student toegevoegt!");
-    }
-
-    public static void verwijderStudent(ArrayList<Student> array) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Geef het studentnummer: ");
-        int nummer = scanner.nextInt();
-        for (int i = 0; i < array.size(); i++)
-        {
-            if (nummer == array.get(i).getStudentenNummer())
-            {
-                System.out.println(array.get(i).getNaam() + " verwijdert.");
-                array.remove(i);
-                break;
-            } else {}
-        }
-    }
-
-    public static void examenMaken(Examen examen) {
-
-
-    }
-
-    public static void studentGeslaagd() {
-
-    }
+    /* deze methodes moeten nog ergens gemaakt worden
 
     public static void examenBehaaldDoorStudent() {
-
     }
-
     public static void meesteExamenGehaald() {
-
     }
+    */
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -101,7 +59,6 @@ public class Menu {
         // begin programma
 
 
-        menu(lijstStudent); // ER IS NU MAAR 1 ARRAYLIST PARAMETER MAAR ER KOMEN WAARSCHIJNLIJK MEER IN DE PARAMETER (DANER)
+        lijstMenu();
     }
-
 }

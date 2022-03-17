@@ -8,9 +8,6 @@ public class Vraag {
         this.vraag = vraag;
         this.antwoord = antwoord;
     }
-    public Vraag(String vraag) {
-        this.vraag = vraag;
-    }
 
     public String getVraag() {
         return vraag;
@@ -19,13 +16,5 @@ public class Vraag {
         return antwoord;
     }
 
-
-    @Override
-    public String toString() {
-        return "{" +
-                "vraag='" + vraag + '\'' +
-                ", antwoord='" + antwoord + '\'' +
-                '}';
-    }
 }
 

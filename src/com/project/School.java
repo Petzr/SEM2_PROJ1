@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
-    static ArrayList<Examen> alleExamens = new ArrayList<>();
-    static ArrayList<Student> alleStudenten = new ArrayList<>();
+    private ArrayList<Examen> alleExamens = new ArrayList<>();
+    private ArrayList<Student> alleStudenten = new ArrayList<>();
 
-    public static void lijstExamen() {
+    public ArrayList<Examen> getAlleExamens() {
+        return alleExamens;
+    }
+    public ArrayList<Student> getAlleStudenten() {
+        return alleStudenten;
+    }
+
+    public void lijstExamen() {
+        System.out.println("Lijst met examens:");
         for (Examen examen : alleExamens) {
             System.out.printf(
                     "Examen naam: %s, aantal vragen bij examen: %d\n", examen.getNaam(), examen.getVragen().size());
@@ -15,7 +23,7 @@ public class School {
 
     }
 
-    public static void lijstStudenten() {
+    public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten)
         {
@@ -23,7 +31,7 @@ public class School {
         }
     }
 
-    public static void nieuwStudent()
+    public void makenStudent()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
@@ -32,18 +40,18 @@ public class School {
         System.out.println("Student toegevoegt!");
     }
 
-    public static void verwijderStudent(ArrayList<Student> array) {
+    public void verwijderStudent() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef het studentnummer: ");
         int nummer = scanner.nextInt();
-        for (int i = 0; i < array.size(); i++)
+        for (int i = 0; i < alleStudenten.size(); i++)
         {
-            if (nummer == array.get(i).getStudentenNummer())
+            if (nummer == alleStudenten.get(i).getStudentenNummer())
             {
-                System.out.println(array.get(i).getNaam() + " verwijdert.");
-                array.remove(i);
+                System.out.println(alleStudenten.get(i).getNaam() + " verwijdert.");
+                alleStudenten.remove(i);
                 break;
-            } else {}
+            }
         }
     }
 }

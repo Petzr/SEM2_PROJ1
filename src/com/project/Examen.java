@@ -9,11 +9,6 @@ public class Examen {
     private String naam;
     private ArrayList<Vraag> vragen = new ArrayList<>();
 
-    public Examen(String naam, ArrayList<Vraag> vragen) {
-        this.naam = naam;
-        this.vragen = vragen;
-    }
-    // deze constructor leek mij (peter) handiger omdat het direct uit een file kan lezen
     public Examen(String pathname) {
 
         try {
@@ -41,6 +36,9 @@ public class Examen {
     public ArrayList<Vraag> getVragen() {
         return vragen;
     }
+    public int getAantalVragen() {
+        return vragen.size();
+    }
 
     public void examenAfnemen() {
         Scanner scanner = new Scanner(System.in);
@@ -64,13 +62,21 @@ public class Examen {
         System.out.println("Dat was het einde van het examen.");
         System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
 
-        if (vragenGoed < getVragen().size()/2) {
+        if (isGeslaagdExamen(vragenGoed)) {
             System.out.println("Helaas, je hebt het examen niet gehaald.");
         }
         else {
             System.out.println("Goed gedaan, je hebt het examen gehaald.");
         }
 
+
+    }
+
+    public boolean isGeslaagdExamen(int punten) {
+        if (punten < this.getAantalVragen()) {
+            return true;
+        }
+        return false;
     }
 
 }
