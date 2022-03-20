@@ -58,7 +58,10 @@ public class Menu {
 
         // begin programma
 
+        engels.examenAfnemen();
 
-        lijstMenu();
+        //lijstMenu();
+
+
     }
 }
