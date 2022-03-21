@@ -12,7 +12,6 @@ public class Student {
     public Student(String naam, int studentenNummer) {
         this.naam = naam;
         this.studentenNummer = studentenNummer;
-        studentenNummer++;
     }
 
     public String getNaam() {
