@@ -25,9 +25,9 @@ public class Menu {
         ArrayList<Student> lijstStudent = new ArrayList<>();
 
         // begin programma
-        int input= -1;
-        while (input != 0) {
-            System.out.println("WELKOM BIJ HET HOOFDMENU");
+        String input = "";
+        while (!input.equals("0")) {
+            System.out.println("\n\nWELKOM BIJ HET HOOFDMENU");
             System.out.print(
                     "1) Lijst met examens\n" +
                             "2) Lijst met studenten\n" +
@@ -39,24 +39,18 @@ public class Menu {
                             "8) Welke student heeft de meeste examens gehaald?\n" +
                             "0) Exit\n" +
                             "Uw keuze: ");
-            try {
-                input = scanner.nextInt();
-                System.out.println("\n");
-            } catch (Exception e) {
-                System.out.println("Geen getal mee gegeven");
-                input = -1;
-            }
+            input = scanner.nextLine();
 
             switch (input) {
-                case 1: ; break;
-                case 2: School.lijstStudenten(); break;
-                case 3: School.makenStudent(); break;
-                case 4: ; break;
-                case 5: ; break;
-                case 6: ; break;
-                case 7: ; break;
-                case 8: ; break;
-                case 0:
+                case "1": School.lijstExamen(); break;
+                case "2": School.lijstStudenten(); break;
+                case "3": School.makenStudent(); break;
+                case "4": ; break;
+                case "5": ; break;
+                case "6": ; break;
+                case "7": ; break;
+                case "8": ; break;
+                case "0":
                     System.out.println("Fijne dag nog verder!"); break;
                 default:
                     System.out.println("Probeer het opnieuw!"); break;
