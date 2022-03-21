@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class School {
     private ArrayList<Examen> alleExamens = new ArrayList<>();
-    private ArrayList<Student> alleStudenten = new ArrayList<>();
+    private static ArrayList<Student> alleStudenten = new ArrayList<>();
 
     public ArrayList<Examen> getAlleExamens() {
         return alleExamens;
@@ -23,7 +23,7 @@ public class School {
 
     }
 
-    public void lijstStudenten() {
+    public static void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten)
         {
@@ -31,12 +31,13 @@ public class School {
         }
     }
 
-    public void makenStudent()
+    public static void makenStudent()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
         String naam = scanner.nextLine();
-        alleStudenten.add(new Student(naam));
+        Integer nummer = Student.getStudentenNummer();
+        alleStudenten.add(new Student(naam, nummer));
         System.out.println("Student toegevoegt!");
     }
 
