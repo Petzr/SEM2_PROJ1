@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class School {
-    private static ArrayList<Examen> alleExamens = new ArrayList<>();
-    private static ArrayList<Student> alleStudenten = new ArrayList<>();
+    private ArrayList<Examen> alleExamens = new ArrayList<>();
+    private ArrayList<Student> alleStudenten = new ArrayList<>();
 
     public ArrayList<Examen> getAlleExamens() {
         return alleExamens;
@@ -14,7 +14,7 @@ public class School {
         return alleStudenten;
     }
 
-    public static void lijstExamen() {
+    public void lijstExamen() {
         System.out.println("Lijst met examens:");
         for (Examen examen : alleExamens) {
             System.out.printf(
@@ -23,7 +23,7 @@ public class School {
 
     }
 
-    public static void lijstStudenten() {
+    public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten)
         {
@@ -31,7 +31,7 @@ public class School {
         }
     }
 
-    public static void makenStudent()
+    public void makenStudent()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");

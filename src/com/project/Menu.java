@@ -20,6 +20,8 @@ public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        School hhs = new School();
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         ArrayList<Student> lijstStudent = new ArrayList<>();
@@ -42,9 +44,9 @@ public class Menu {
             input = scanner.nextLine();
 
             switch (input) {
-                case "1": School.lijstExamen(); break;
-                case "2": School.lijstStudenten(); break;
-                case "3": School.makenStudent(); break;
+                case "1": hhs.lijstExamen(); break;
+                case "2": hhs.lijstStudenten(); break;
+                case "3": hhs.makenStudent(); break;
                 case "4": ; break;
                 case "5": ; break;
                 case "6": ; break;
