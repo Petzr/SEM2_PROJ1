@@ -11,7 +11,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.print(
-                "1) Lijst met examens\n" +
+                        "1) Lijst met examens\n" +
                         "2) Lijst met studenten\n" +
                         "3) Nieuwe student inschrijven\n" +
                         "4) Student verwijderen\n" +
@@ -24,9 +24,9 @@ public class Menu {
         int input = scanner.nextInt();
         switch (input) {
             case 1: ; break;
-            case 2: ; lijstMenu(); break;
-            case 3: ; lijstMenu(); break;
-            case 4: ; lijstMenu(); break;
+            case 2: School.lijstStudenten(); lijstMenu(); break;
+            case 3: School.makenStudent(); lijstMenu(); break;
+            case 4: School.verwijderStudent(); lijstMenu(); break;
             case 5: ; break;
             case 6: ; break;
             case 7: ; break;
@@ -58,7 +58,7 @@ public class Menu {
 
         // begin programma
 
-        engels.examenAfnemen();
+        lijstMenu();
 
         //lijstMenu();
 
