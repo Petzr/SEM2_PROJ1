@@ -78,4 +78,45 @@ public class School {
             }
         }
     }
+
+    public void maakExamen() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Geef het studentnummer: ");
+        int nummer = scanner.nextInt();
+        scanner.nextLine();
+
+        // checken voor student
+        for (Student student : alleStudenten) {
+
+            // zoeken naar juiste student in alleStudenten
+            if (nummer == student.getStudentenNummer()) {
+                // checken of juiste student
+                System.out.println(student.getNaam() +", bent jij dit? ja/nee");
+                String check = scanner.nextLine();
+                if (check.equals("ja")) {
+
+                    // keuze welk examen gemaakt word
+                    System.out.println("Welke examen wil je maken? engels/wiskunde");
+                    String keuze = scanner.nextLine();
+                    Examen examen = null;
+                    if (keuze.equals("wiskunde")) {
+                        examen = alleExamens.get(1);
+                    } else if (keuze.equals("engels")) {
+                        examen = alleExamens.get(0);
+                    }
+
+                    // examen afnemen
+                    if (examen != null) {
+                        boolean isGeslaagd = examen.examenAfnemen();
+                        // examen behaald?
+                        if (isGeslaagd) {
+                            student.addGeslaagdExamen(examen);
+                            return;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
 }

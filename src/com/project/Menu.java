@@ -57,7 +57,7 @@ public class Menu {
                 case "2": hhs.lijstStudenten(); break;
                 case "3": hhs.makenStudent(); break;
                 case "4": hhs.verwijderStudent(); break;
-                case "5": ; break;
+                case "5": hhs.maakExamen(); break;
                 case "6": ; break;
                 case "7": ; break;
                 case "8": ; break;
