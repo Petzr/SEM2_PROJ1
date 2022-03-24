@@ -79,17 +79,24 @@ class SchoolTest {
         studenten.add(new Student("Daner",1));
         studenten.add( new Student("Peter",2));
         studenten.add( new Student("Dwayne",3));
-        studenten.add( new Student("Rajiv",4));
-
 
         School school = new School(studenten);
 
 
         //act
-        school.makenStudent();
-        var actualResult = school.getAlleStudenten();
-        var expectedResultcount = studenten.size() + 1;
+        String naam = "Daner";
+        Integer nummer = 1;
+        alleStudenten.add(new Student(naam, nummer));
+        String naam2 = "Peter";
+        Integer nummer2 = 2;
+        alleStudenten.add(new Student(naam2, nummer2));
+        String naam3 = "Dwayne";
+        Integer nummer3 = 3;
+        alleStudenten.add(new Student(naam3, nummer3));
+
+        var expectedResultcount = studenten.size();
+        var actualResult = school.getAlleStudenten().size();
         //Assert
-        assertEquals(expectedResultcount, actualResult.size());
+        assertEquals(expectedResultcount, actualResult);
     }
 }
