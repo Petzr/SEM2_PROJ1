@@ -50,6 +50,10 @@ public class School {
         }
     }
 
+    public void addStudent(Student student) {
+        alleStudenten.add(student);
+    }
+
     public void makenStudent()
     {
         Scanner scanner = new Scanner(System.in);

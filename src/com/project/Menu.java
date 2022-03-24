@@ -22,10 +22,18 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
 
         School hhs = new School();
+
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         hhs.addExamen(engels);
         hhs.addExamen(wiskunde);
+
+        Student student1 = new Student("Peter", Student.getUniekNummer());
+        Student student2 = new Student("Daner", Student.getUniekNummer());
+        Student student3 = new Student("Dwayne", Student.getUniekNummer());
+        hhs.addStudent(student1);
+        hhs.addStudent(student2);
+        hhs.addStudent(student3);
 
         // begin programma
         String input = "";
