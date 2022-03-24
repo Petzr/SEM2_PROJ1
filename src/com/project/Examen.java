@@ -1,6 +1,7 @@
 package com.project;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,8 +25,7 @@ public class Examen {
                 vragen.add(vraag);
 
             }
-        }
-        catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println(e);
         }
     }

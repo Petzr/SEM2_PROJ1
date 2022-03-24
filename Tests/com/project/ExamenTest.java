@@ -21,10 +21,10 @@ class ExamenTest {
 
     @Test
     void getVragen() {
-        ArrayList<Vraag> expectedResult;
+        ArrayList<Vraag> expectedResult = new ArrayList<>();
         ArrayList<Vraag> actualResult = engels.getVragen();
 
-        //assertEquals(expectedResult, actualResult);
+        assertEquals(expectedResult, actualResult);
     }
 
     @Test
