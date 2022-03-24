@@ -40,7 +40,7 @@ public class Examen {
         return vragen.size();
     }
 
-    public void examenAfnemen() {
+    public boolean examenAfnemen() {
         Scanner scanner = new Scanner(System.in);
 
         // welkom bericht voor het maken van het exmanen
@@ -72,21 +72,18 @@ public class Examen {
         System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
         System.out.println("Je hebt meer dan "+ getAantalVragen()/2 +" antwoorden goed nodig om te slagen.");
 
-        if (isGeslaagdVoorExamen(vragenGoed)) {
-            System.out.println("Goed gedaan, je hebt het examen gehaald.");
-        }
-        else {
-            System.out.println("Helaas, je hebt het examen niet gehaald.");
-        }
-
+        return isGeslaagdVoorExamen(vragenGoed);
 
     }
 
     public boolean isGeslaagdVoorExamen(int punten) {
         if (punten > this.getAantalVragen()/2) {
+            System.out.println("Goed gedaan, je hebt het examen gehaald.");
             return true;
+        } else {
+            System.out.println("Helaas, je hebt het examen niet gehaald.");
+            return false;
         }
-        return false;
     }
 
 }
