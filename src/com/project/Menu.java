@@ -35,21 +35,21 @@ public class Menu {
         hhs.addStudent(student2);
         hhs.addStudent(student3);
 
+        ArrayList<String> menuKeuzes = new ArrayList<>();
+        menuKeuzes.add("EXIT");
+        menuKeuzes.add("Lijst met examnes");
+        menuKeuzes.add("Lijst met studenten");
+        menuKeuzes.add("Nieuwe student inschrijven");
+        menuKeuzes.add("Student verwijderen");
+        menuKeuzes.add("Examen afnemen");
+        menuKeuzes.add("is student geslaagd voor test?");
+        menuKeuzes.add("Welke examnes heeft studetn gehaald?");
+        menuKeuzes.add("Welke student heeft de meeste examens gehaald");
+
         // begin programma
         String input = "";
         while (!input.equals("0")) {
-            System.out.println("\n\nWELKOM BIJ HET HOOFDMENU");
-            System.out.print(
-                    "1) Lijst met examens\n" +
-                            "2) Lijst met studenten\n" +
-                            "3) Nieuwe student inschrijven\n" +
-                            "4) Student verwijderen\n" +
-                            "5) Examen afnemen\n" +
-                            "6) Is student geslaagd voor test?\n" +
-                            "7) Welke examens heeft student gehaald?\n" +
-                            "8) Welke student heeft de meeste examens gehaald?\n" +
-                            "0) Exit\n" +
-                            "Uw keuze: ");
+            printMenu(menuKeuzes);
             input = scanner.nextLine();
 
             switch (input) {
@@ -68,5 +68,15 @@ public class Menu {
             }
         }
 
+    }
+
+    public static void printMenu(ArrayList<String> menuKeuzes) {
+        System.out.println("\n\n\n\n\n\n*************************************");
+        System.out.println("WELKOM BIJ HET HOOFDMENU");
+        for (int i=0; i < menuKeuzes.size(); i++) {
+            String line = String.format("%2d) %s", i, menuKeuzes.get(i));
+            System.out.println(line);
+        }
+        System.out.print("Uw keuze: ");
     }
 }

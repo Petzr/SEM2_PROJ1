@@ -7,24 +7,23 @@ public class School {
     private ArrayList<Examen> alleExamens = new ArrayList<>();
     private ArrayList<Student> alleStudenten = new ArrayList<>();
 
-    public School(ArrayList<Examen> alleExamens, ArrayList<Student> alleStudenten)
-    {
+    public School(ArrayList<Examen> alleExamens, ArrayList<Student> alleStudenten) {
         this.alleExamens = alleExamens;
         this.alleStudenten = alleStudenten;
     }
 
-    public School(){
+    public School() {
 
     }
 
-    public School(ArrayList<Student> alleStudenten)
-    {
+    public School(ArrayList<Student> alleStudenten) {
         this.alleStudenten = alleStudenten;
     }
 
     public ArrayList<Examen> getAlleExamens() {
         return alleExamens;
     }
+
     public ArrayList<Student> getAlleStudenten() {
         return alleStudenten;
     }
@@ -44,8 +43,7 @@ public class School {
 
     public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
-        for (Student student : alleStudenten)
-        {
+        for (Student student : alleStudenten) {
             System.out.println(student.getStudentenNummer() + ", " + student.getNaam());
         }
     }
@@ -54,8 +52,7 @@ public class School {
         alleStudenten.add(student);
     }
 
-    public void makenStudent()
-    {
+    public void makenStudent() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef naam: ");
         String naam = scanner.nextLine();
@@ -68,15 +65,49 @@ public class School {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Geef het studentnummer: ");
         int nummer = scanner.nextInt();
-        for (int i = 0; i < alleStudenten.size(); i++)
-        {
-            if (nummer == alleStudenten.get(i).getStudentenNummer())
-            {
+        for (int i = 0; i < alleStudenten.size(); i++) {
+            if (nummer == alleStudenten.get(i).getStudentenNummer()) {
                 System.out.println(alleStudenten.get(i).getNaam() + " verwijdert.");
                 alleStudenten.remove(i);
                 break;
             }
         }
+    }
+
+    public Student checkStudent() {
+        Scanner scanner = new Scanner(System.in);
+
+        boolean stop = false;
+        while (!stop) {
+            // vragen naar student
+            System.out.print("Geef het studentnummer: ");
+            int nummer;
+            try {
+                nummer = scanner.nextInt();
+                scanner.nextLine();
+
+                // checken voor student
+                for (Student student : alleStudenten) {
+                    // zoeken naar juiste student in alleStudenten
+                    if (nummer == student.getStudentenNummer()) {
+                        // controlleren of het juiste student is
+                        System.out.println(student.getNaam() + ", bent jij dit? ja/nee");
+                        String check = scanner.nextLine();
+                        if (check.equals("ja")) {
+                            return student;
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                return null;
+            }
+
+        }
+        return null;
+    }
+
+    public void heeftExamenGemaakt() {
+        Student student = checkStudent();
     }
 
     public void maakExamen() {
@@ -85,37 +116,24 @@ public class School {
         int nummer = scanner.nextInt();
         scanner.nextLine();
 
-        // checken voor student
-        for (Student student : alleStudenten) {
+        Student student = checkStudent();
 
-            // zoeken naar juiste student in alleStudenten
-            if (nummer == student.getStudentenNummer()) {
-                // checken of juiste student
-                System.out.println(student.getNaam() +", bent jij dit? ja/nee");
-                String check = scanner.nextLine();
-                if (check.equals("ja")) {
+        // keuze welk examen gemaakt word
+        System.out.println("Welke examen wil je maken? engels/wiskunde");
+        String keuze = scanner.nextLine();
+        Examen examen = null;
+        if (keuze.equals("wiskunde")) {
+            examen = alleExamens.get(1);
+        } else if (keuze.equals("engels")) {
+            examen = alleExamens.get(0);
+        }
 
-                    // keuze welk examen gemaakt word
-                    System.out.println("Welke examen wil je maken? engels/wiskunde");
-                    String keuze = scanner.nextLine();
-                    Examen examen = null;
-                    if (keuze.equals("wiskunde")) {
-                        examen = alleExamens.get(1);
-                    } else if (keuze.equals("engels")) {
-                        examen = alleExamens.get(0);
-                    }
-
-                    // examen afnemen
-                    if (examen != null) {
-                        boolean isGeslaagd = examen.examenAfnemen();
-                        // examen behaald?
-                        if (isGeslaagd) {
-                            student.addGeslaagdExamen(examen);
-                            return;
-                        }
-                    }
-
-                }
+        // examen afnemen
+        if (examen != null) {
+            boolean isGeslaagd = examen.examenAfnemen();
+            // examen behaald?
+            if (isGeslaagd) {
+                student.addGeslaagdExamen(examen);
             }
         }
     }
