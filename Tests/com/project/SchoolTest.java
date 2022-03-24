@@ -3,6 +3,7 @@ package com.project;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,23 +25,33 @@ class SchoolTest {
 
 
         //act
-        school.makenStudent();
-        var actualResult = school.getAlleStudenten();
-        var expectedResultcount = studenten.size() - 1;
+        int nummer = 3;
+        for (int i = 0; i < alleStudenten.size(); i++)
+        {
+            if (nummer == alleStudenten.get(i).getStudentenNummer())
+            {
+                alleStudenten.remove(i);
+                break;
+            }
+        }
+
+        var actualResult = school.getAlleStudenten().size();
+        var expectedResultcount = studenten.size();
         //Assert
-        assertEquals(expectedResultcount, actualResult.size());
+        assertEquals(expectedResultcount, actualResult);
     }
 
 
     @Test
-    void lijstStudent(){
+    void lijstStudent()
+    {
 
         // arrange
         ArrayList<Student> studenten = new ArrayList<Student>();
-        studenten.add(new Student("Daner",1));
-        studenten.add( new Student("Peter",2));
-        studenten.add( new Student("Dwayne",3));
-        studenten.add( new Student("Rajiv",4));
+        studenten.add(new Student("Daner", 1));
+        studenten.add(new Student("Peter", 2));
+        studenten.add(new Student("Dwayne", 3));
+        studenten.add(new Student("Rajiv", 4));
 
 
         School school = new School(studenten);
@@ -49,29 +60,31 @@ class SchoolTest {
         var ActualResult = school.getAlleStudenten();
 
         //Assert
-        assertEquals(studenten,ActualResult);
+        assertEquals(studenten, ActualResult);
     }
 
     @Test
-    void lijstExamen(){
+    void lijstExamen()
+    {
         // arrange
         ArrayList<Student> studenten = new ArrayList<Student>();
-        studenten.add(new Student("Daner",1));
-        studenten.add( new Student("Peter",2));
-        studenten.add( new Student("Dwayne",3));
-        studenten.add( new Student("Rajiv",4));
+        studenten.add(new Student("Daner", 1));
+        studenten.add(new Student("Peter", 2));
+        studenten.add(new Student("Dwayne", 3));
+        studenten.add(new Student("Rajiv", 4));
 
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
-    Examen wiskunde  = new Examen("Resources/WiskundeExamenVragen.txt");
-    ArrayList<Examen> expectedResult = new ArrayList<Examen>();
-    expectedResult.add(engels);
-    expectedResult.add(wiskunde);
-    School school = new School(expectedResult, studenten);
+        Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
+        ArrayList<Examen> expectedResult = new ArrayList<Examen>();
+        expectedResult.add(engels);
+        expectedResult.add(wiskunde);
+        School school = new School(expectedResult, studenten);
         //act
-    ArrayList<Examen> actualResult = school.getAlleExamens();
+        ArrayList<Examen> actualResult = school.getAlleExamens();
         //assert
-    assertEquals(expectedResult,actualResult);
-}
+        assertEquals(expectedResult, actualResult);
+    }
+
     @Test
     void makenStudent(){
         // arrange
