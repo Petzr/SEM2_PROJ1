@@ -55,13 +55,13 @@ class SchoolTest {
     @Test
     void lijstExamen(){
         // arrange
-    ArrayList<Student> studenten = new ArrayList<Student>();
-    studenten.add(new Student("Daner",1));
-    studenten.add( new Student("Peter",2));
-    studenten.add( new Student("Dwayne",3));
-    studenten.add( new Student("Rajiv",4));
+        ArrayList<Student> studenten = new ArrayList<Student>();
+        studenten.add(new Student("Daner",1));
+        studenten.add( new Student("Peter",2));
+        studenten.add( new Student("Dwayne",3));
+        studenten.add( new Student("Rajiv",4));
 
-    Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
+        Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
     Examen wiskunde  = new Examen("Resources/WiskundeExamenVragen.txt");
     ArrayList<Examen> expectedResult = new ArrayList<Examen>();
     expectedResult.add(engels);
