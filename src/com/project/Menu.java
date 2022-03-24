@@ -24,7 +24,8 @@ public class Menu {
         School hhs = new School();
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
-        ArrayList<Student> lijstStudent = new ArrayList<>();
+        hhs.addExamen(engels);
+        hhs.addExamen(wiskunde);
 
         // begin programma
         String input = "";

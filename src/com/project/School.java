@@ -38,6 +38,10 @@ public class School {
 
     }
 
+    public void addExamen(Examen examen) {
+        alleExamens.add(examen);
+    }
+
     public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten)
