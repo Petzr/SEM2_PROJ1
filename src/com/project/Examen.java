@@ -71,6 +71,8 @@ public class Examen {
         System.out.println("Dat was het einde van het examen.");
         System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
         System.out.println("Je hebt meer dan "+ getAantalVragen()/2 +" antwoorden goed nodig om te slagen.");
+        System.out.println("Klik ENTER om te sluiten");
+        scanner.nextLine();
 
         return isGeslaagdVoorExamen(vragenGoed);
 

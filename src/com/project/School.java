@@ -77,8 +77,7 @@ public class School {
     public Student checkStudent() {
         Scanner scanner = new Scanner(System.in);
 
-        boolean stop = false;
-        while (!stop) {
+        while (true) {
             // vragen naar student
             System.out.print("Geef het studentnummer: ");
             int nummer;
@@ -99,11 +98,11 @@ public class School {
                     }
                 }
             } catch (Exception e) {
+                System.out.println("Geen getal ingevoerd");
                 return null;
             }
 
         }
-        return null;
     }
 
     public void heeftExamenGemaakt() {
@@ -112,11 +111,12 @@ public class School {
 
     public void maakExamen() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Geef het studentnummer: ");
-        int nummer = scanner.nextInt();
-        scanner.nextLine();
 
         Student student = checkStudent();
+        if (student == null) {
+            System.out.println("Geen correct student gevonden");
+            return;
+        }
 
         // keuze welk examen gemaakt word
         System.out.println("Welke examen wil je maken? engels/wiskunde");
@@ -135,6 +135,23 @@ public class School {
             if (isGeslaagd) {
                 student.addGeslaagdExamen(examen);
             }
+        }
+    }
+
+    public void meesteExamensGehaald() {
+        ArrayList<Student> studenten = new ArrayList<>();
+        int meesteExamens = 0;
+        for (Student student : getAlleStudenten()) {
+
+            int examensGehaald = student.getGeslaagdeExamen().size();
+            if (examensGehaald >= meesteExamens) {
+                studenten.add(student);
+                meesteExamens = examensGehaald;
+            }
+        }
+
+        for (Student student : studenten) {
+            System.out.printf("%d %s heeft %d examens gehaald\n", student.getStudentenNummer(), student.getNaam(), meesteExamens);
         }
     }
 }

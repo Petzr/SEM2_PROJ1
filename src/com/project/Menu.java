@@ -60,7 +60,7 @@ public class Menu {
                 case "5": hhs.maakExamen(); break;
                 case "6": ; break;
                 case "7": ; break;
-                case "8": ; break;
+                case "8": hhs.meesteExamensGehaald(); break;
                 case "0":
                     System.out.println("Fijne dag nog verder!"); break;
                 default:
