@@ -75,7 +75,6 @@ public class Examen {
         scanner.nextLine();
 
         return isGeslaagdVoorExamen(vragenGoed);
-
     }
 
     public boolean isGeslaagdVoorExamen(int punten) {

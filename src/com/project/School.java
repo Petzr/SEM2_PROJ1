@@ -105,10 +105,6 @@ public class School {
         }
     }
 
-    public void heeftExamenGemaakt() {
-        Student student = checkStudent();
-    }
-
     public void maakExamen() {
         Scanner scanner = new Scanner(System.in);
 
@@ -141,8 +137,7 @@ public class School {
     public void welkeExamensGehaald() {
         Scanner scanner = new Scanner(System.in);
         Student student = checkStudent();
-        String examensGehaald = student.getGeslaagdeExamen().size() >= 1 ? "Je hebt de volgende examens gehaald:" : "Je hebt geen examens gehaald.";
-        System.out.println(examensGehaald);
+        System.out.println(student.getGeslaagdeExamen().size() >= 1 ? "Je hebt de volgende examens gehaald:" : "Je hebt geen examens gehaald.");
         for (int i = 0; i < student.getGeslaagdeExamen().size(); i++) {
             System.out.println(student.getGeslaagdeExamen().get(i).getNaam().substring(0, student.getGeslaagdeExamen().get(i).getNaam().length()-16));
         }
