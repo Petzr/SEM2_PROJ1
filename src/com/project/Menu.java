@@ -35,6 +35,9 @@ public class Menu {
         hhs.addStudent(student2);
         hhs.addStudent(student3);
 
+        student2.addGeslaagdExamen(engels);
+        student2.addGeslaagdExamen(wiskunde);
+
         ArrayList<String> menuKeuzes = new ArrayList<>();
         menuKeuzes.add("EXIT");
         menuKeuzes.add("Lijst met examnes");
@@ -42,8 +45,7 @@ public class Menu {
         menuKeuzes.add("Nieuwe student inschrijven");
         menuKeuzes.add("Student verwijderen");
         menuKeuzes.add("Examen afnemen");
-        menuKeuzes.add("is student geslaagd voor test?");
-        menuKeuzes.add("Welke examnes heeft studetn gehaald?");
+        menuKeuzes.add("Welke examens heeft student gehaald?");
         menuKeuzes.add("Welke student heeft de meeste examens gehaald");
 
         // begin programma
@@ -58,9 +60,8 @@ public class Menu {
                 case "3": hhs.makenStudent(); break;
                 case "4": hhs.verwijderStudent(); break;
                 case "5": hhs.maakExamen(); break;
-                case "6": ; break;
-                case "7": ; break;
-                case "8": hhs.meesteExamensGehaald(); break;
+                case "6": hhs.welkeExamensGehaald(); break;
+                case "7": hhs.meesteExamensGehaald(); break;
                 case "0":
                     System.out.println("Fijne dag nog verder!"); break;
                 default:
