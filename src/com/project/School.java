@@ -34,7 +34,6 @@ public class School {
             System.out.printf(
                     "Examen naam: %s, aantal vragen bij examen: %d\n", examen.getNaam(), examen.getVragen().size());
         }
-
     }
 
     public void addExamen(Examen examen) {
@@ -135,8 +134,11 @@ public class School {
     }
 
     public void welkeExamensGehaald() {
-        Scanner scanner = new Scanner(System.in);
         Student student = checkStudent();
+        if (student == null) {
+            System.out.println("Geen correct student gevonden");
+            return;
+        }
         System.out.println(student.getGeslaagdeExamen().size() >= 1 ? "Je hebt de volgende examens gehaald:" : "Je hebt geen examens gehaald.");
         for (int i = 0; i < student.getGeslaagdeExamen().size(); i++) {
             System.out.println(student.getGeslaagdeExamen().get(i).getNaam().substring(0, student.getGeslaagdeExamen().get(i).getNaam().length()-16));
