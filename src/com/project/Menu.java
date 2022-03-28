@@ -35,9 +35,6 @@ public class Menu {
         hhs.addStudent(student2);
         hhs.addStudent(student3);
 
-        student2.addGeslaagdExamen(engels);
-        student2.addGeslaagdExamen(wiskunde);
-
         ArrayList<String> menuKeuzes = new ArrayList<>();
         menuKeuzes.add("EXIT");
         menuKeuzes.add("Lijst met examnes");
