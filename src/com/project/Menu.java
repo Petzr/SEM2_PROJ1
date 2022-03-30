@@ -37,7 +37,7 @@ public class Menu {
 
         ArrayList<String> menuKeuzes = new ArrayList<>();
         menuKeuzes.add("EXIT");
-        menuKeuzes.add("Lijst met examnes");
+        menuKeuzes.add("Lijst met examens");
         menuKeuzes.add("Lijst met studenten");
         menuKeuzes.add("Nieuwe student inschrijven");
         menuKeuzes.add("Student verwijderen");
