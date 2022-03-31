@@ -6,18 +6,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public void studentMaaktExamen() {
-
-    }
-
-    /* deze methodes moeten nog ergens gemaakt worden
-
-    public static void examenBehaaldDoorStudent() {
-    }
-    public static void meesteExamenGehaald() {
-    }
-    */
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

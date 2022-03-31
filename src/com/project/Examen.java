@@ -68,7 +68,7 @@ public class Examen {
     }
 
     public boolean isGeslaagdVoorExamen(int punten) {
-        if (punten > this.getAantalVragen()/2) {
+        if (punten > getAantalVragen()/2) {
             System.out.println("Goed gedaan, je hebt het examen gehaald.");
             return true;
         } else {
