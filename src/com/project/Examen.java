@@ -53,17 +53,7 @@ public class Examen {
         // start van alle vragen in de file
         int vragenGoed = 0;
         for (Vraag vraag : getVragen()) {
-            System.out.println(vraag.getVraag());
-
-            String antwoord = scanner.nextLine();
-            if (antwoord.equals(vraag.getAntwoord())) {
-                System.out.print("Goed, ");
-                vragenGoed++;
-            }
-            else {
-                System.out.print("Fout, ");
-            }
-            System.out.println("Het goede antwoord is: "+ vraag.getAntwoord() +"\n");
+            vragenGoed += vraag.beantwoordVraag();
         }
 
         // einde examen met puntentelling en bericht
