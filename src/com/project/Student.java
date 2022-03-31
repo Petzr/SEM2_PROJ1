@@ -35,6 +35,13 @@ public class Student {
     public int getStudentenNummer() {
         return studentenNummer;
     }
+    public void toonBehaaldeExamens(){
+        System.out.println(getGeslaagdeExamen().size() >= 1 ? "Je hebt de volgende examens gehaald:" : "Je hebt geen examens gehaald.");
+
+        for (int i = 0; i < getGeslaagdeExamen().size(); i++) {
+            System.out.println(getGeslaagdeExamen().get(i).getNaam().substring(0,getGeslaagdeExamen().get(i).getNaam().length()-16));
+        }
+    }
     public void toonStudent(){
 
         System.out.println(getNaam() + ", " + getStudentenNummer());
