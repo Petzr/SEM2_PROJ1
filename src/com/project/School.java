@@ -82,13 +82,8 @@ public class School {
                 // checken voor student
                 for (Student student : alleStudenten) {
                     // zoeken naar juiste student in alleStudenten
-                    if (nummer == student.getStudentenNummer()) {
-                        // controlleren of het juiste student is
-                        System.out.println(student.getNaam() + ", bent jij dit? ja/nee");
-                        String check = scanner.nextLine();
-                        if (check.equals("ja")) {
-                            return student;
-                        }
+                    if (student.zoekStudent(nummer)) {
+                        return student;
                     }
                 }
             } catch (Exception e) {

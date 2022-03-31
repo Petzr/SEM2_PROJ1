@@ -40,10 +40,6 @@ public class Student {
         System.out.println(getNaam() + ", " + getStudentenNummer());
     }
 
-
-
-
-
     public ArrayList<Examen> getGeslaagdeExamen() {
         return geslaagdVoorExamens;
     }
@@ -53,5 +49,25 @@ public class Student {
 
     public void addGeslaagdExamen(Examen examen) {
         geslaagdVoorExamens.add(examen);
+    }
+
+    public Boolean zoekStudent(int nummer)
+    {
+        // checken voor student
+        Scanner scanner = new Scanner(System.in);
+        if (nummer == studentenNummer)
+        {
+            // controlleren of het juiste student is
+            System.out.println(naam + ", bent jij dit? ja/nee");
+            String check = scanner.nextLine();
+            if (check.equals("ja"))
+            {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }
