@@ -77,4 +77,12 @@ public class Student {
             return false;
         }
     }
+
+    public void toonMeestBehaaldeExamens(int meesteExamens) {
+
+        if (getGeslaagdeExamen().size() >= meesteExamens) {
+            System.out.printf("%d %s heeft %d examens gehaald\n",
+                    getStudentenNummer(), getNaam(), getGeslaagdeExamen().size());
+        }
+    }
 }

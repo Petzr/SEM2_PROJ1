@@ -143,10 +143,7 @@ public class School {
         }
 
         for (Student student : getAlleStudenten()) {
-            if (student.getGeslaagdeExamen().size() >= meesteExamens) {
-                System.out.printf("%d %s heeft %d examens gehaald\n",
-                        student.getStudentenNummer(), student.getNaam(), student.getGeslaagdeExamen().size());
-            }
+            student.toonMeestBehaaldeExamens(meesteExamens);
         }
     }
 }
