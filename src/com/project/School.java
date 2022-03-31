@@ -31,8 +31,7 @@ public class School {
     public void lijstExamen() {
         System.out.println("Lijst met examens:");
         for (Examen examen : alleExamens) {
-            System.out.printf(
-                    "Examen naam: %s, aantal vragen bij examen: %d\n", examen.getNaam(), examen.getVragen().size());
+            examen.toonExamenInfo();
         }
     }
 

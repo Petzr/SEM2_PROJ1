@@ -87,5 +87,10 @@ public class Examen {
         }
     }
 
+    public void toonExamenInfo() {
+        System.out.printf("Examen naam: %s, aantal vragen bij examen: %d\n", getNaam(), getVragen().size());
+
+    }
+
 }
 
