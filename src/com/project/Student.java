@@ -35,6 +35,14 @@ public class Student {
     public int getStudentenNummer() {
         return studentenNummer;
     }
+    public void toonStudent(){
+
+        System.out.println(getNaam() + ", " + getStudentenNummer());
+    }
+
+
+
+
 
     public ArrayList<Examen> getGeslaagdeExamen() {
         return geslaagdVoorExamens;

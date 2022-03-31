@@ -42,7 +42,7 @@ public class School {
     public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten) {
-            System.out.println(student.getStudentenNummer() + ", " + student.getNaam());
+            student.toonStudent();
         }
     }
 
@@ -156,5 +156,5 @@ public class School {
                         student.getStudentenNummer(), student.getNaam(), student.getGeslaagdeExamen().size());
             }
         }
-    }// TEste TEST
+    }
 }
