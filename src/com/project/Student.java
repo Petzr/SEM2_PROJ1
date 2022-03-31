@@ -1,6 +1,7 @@
 package com.project;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Student {
 
@@ -11,9 +12,16 @@ public class Student {
     private ArrayList<Examen> geslaagdVoorExamens = new ArrayList<>();
     private static ArrayList<Integer> alleStudentenNummers = new ArrayList<>();
 
-    public Student(String naam, int studentenNummer) {
+    public Student(String naam) {
         this.naam = naam;
-        this.studentenNummer = studentenNummer;
+        this.studentenNummer = getUniekNummer();
+    }
+
+    public Student() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Voer hier je naam in: ");
+        this.naam = scanner.nextLine();
+        this.studentenNummer = getUniekNummer();
     }
 
     public String getNaam() {

@@ -51,11 +51,7 @@ public class School {
     }
 
     public void makenStudent() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Geef naam: ");
-        String naam = scanner.nextLine();
-        Integer nummer = Student.getUniekNummer();
-        alleStudenten.add(new Student(naam, nummer));
+        alleStudenten.add(new Student());
         System.out.println("Student toegevoegt!");
     }
 

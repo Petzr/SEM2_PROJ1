@@ -28,9 +28,9 @@ public class Menu {
         hhs.addExamen(engels);
         hhs.addExamen(wiskunde);
 
-        Student student1 = new Student("Peter", Student.getUniekNummer());
-        Student student2 = new Student("Daner", Student.getUniekNummer());
-        Student student3 = new Student("Dwayne", Student.getUniekNummer());
+        Student student1 = new Student("Peter");
+        Student student2 = new Student("Daner");
+        Student student3 = new Student("Dwayne");
         hhs.addStudent(student1);
         hhs.addStudent(student2);
         hhs.addStudent(student3);
