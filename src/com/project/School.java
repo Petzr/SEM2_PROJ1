@@ -146,24 +146,20 @@ public class School {
     }
 
     public void meesteExamensGehaald() {
-
-        // de fout van optie 7 zit in deze methode
-        // lees maar goed. ik(peter) heb de fout al gevonden
-        // maar ik weet niet hoe ik het moet oplossen
-
-        ArrayList<Student> studenten = new ArrayList<>();
         int meesteExamens = 0;
         for (Student student : getAlleStudenten()) {
 
             int examensGehaald = student.getGeslaagdeExamen().size();
             if (examensGehaald >= meesteExamens) {
-                studenten.add(student);
                 meesteExamens = examensGehaald;
             }
         }
 
-        for (Student student : studenten) {
-            System.out.printf("%d %s heeft %d examens gehaald\n", student.getStudentenNummer(), student.getNaam(), meesteExamens);
+        for (Student student : getAlleStudenten()) {
+            if (student.getGeslaagdeExamen().size() >= meesteExamens) {
+                System.out.printf("%d %s heeft %d examens gehaald\n",
+                        student.getStudentenNummer(), student.getNaam(), student.getGeslaagdeExamen().size());
+            }
         }
     }
 }
