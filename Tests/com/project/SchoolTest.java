@@ -28,34 +28,38 @@ class SchoolTest {
     void addExamen() {
         // arrange
         Examen examen1 = new Examen("Resources/EngelsExamenVragen.txt");
+        ArrayList<Examen> expected = new ArrayList<>();
+        expected.add(examen1);
 
         // act
         school.addExamen(examen1);
+        ArrayList<Examen> actual = school.getAlleExamens();
 
         // assert
-        school.lijstExamen();
+        assertEquals(expected, actual);
     }
 
     @Test
     void lijstStudenten() {
         // arrange
+        ArrayList<Student> expected = new ArrayList<>();
+        expected.add(student);
 
         // act
+        school.addStudent(student);
+        ArrayList<Student> actual = school.getAlleStudenten();
 
         // assert
-
+        assertEquals(expected, actual);
     }
 
     @Test
     void addStudent() {
         // arrange
-        Student student1 = new Student("Peter");
 
         // act
-        school.addStudent(student1);
 
         // assert
-        school.lijstStudenten();
 
     }
 
@@ -147,10 +151,34 @@ class SchoolTest {
     @Test
     void meesteExamensGehaald() {
         // arrange
+        ArrayList<Student> alleStudenten = new ArrayList<>();
+        student.addGeslaagdExamen(examen);
+        alleStudenten.add(student);
+        alleStudenten.add(new Student("Daner"));
+        alleStudenten.add(new Student("Dwayne"));
+
+        ArrayList<Student> gehaaldStudenten = new ArrayList<>();
+        ArrayList<Student> echtGehaaldeStudenten = new ArrayList<>();
+        echtGehaaldeStudenten.add(student);
 
         // act
+        int meesteExamens = 0;
+        for (Student student : alleStudenten) {
+
+            int examensGehaald = student.getGeslaagdeExamen().size();
+            if (examensGehaald >= meesteExamens) {
+                meesteExamens = examensGehaald;
+            }
+        }
+
+        for (Student student : alleStudenten) {
+            student.toonMeestBehaaldeExamens(meesteExamens);
+            gehaaldStudenten.add(student);
+        }
+
 
         // assert
+        assertEquals(echtGehaaldeStudenten, gehaaldStudenten);
 
     }
 }
