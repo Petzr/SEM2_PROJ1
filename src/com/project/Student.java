@@ -32,6 +32,7 @@ public class Student {
         uniekNummer++;
         return uniekNummer;
     }
+
     public int getStudentenNummer() {
         return studentenNummer;
     }
