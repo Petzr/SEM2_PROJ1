@@ -15,13 +15,15 @@ class SchoolTest {
     @Test
     void lijstExamen() {
         // arrange
-        school.addExamen(examen);
+        ArrayList<Examen> expected = new ArrayList<>();
+        expected.add(examen);
 
         // act
-        school.lijstExamen();
+        school.addExamen(examen);
+        ArrayList<Examen> actual = school.getAlleExamens();
 
         // assert
-
+        assertEquals(expected, actual);
     }
 
     @Test
