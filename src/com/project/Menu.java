@@ -40,17 +40,15 @@ public class Menu {
             input = scanner.nextLine();
 
             switch (input) {
-                case "1": hhs.lijstExamen(); break;
-                case "2": hhs.lijstStudenten(); break;
-                case "3": hhs.makenStudent(); break;
-                case "4": hhs.verwijderStudent(); break;
-                case "5": hhs.maakExamen(); break;
-                case "6": hhs.welkeExamensGehaald(); break;
-                case "7": hhs.meesteExamensGehaald(); break;
-                case "0":
-                    System.out.println("Fijne dag nog verder!"); break;
-                default:
-                    System.out.println("Probeer het opnieuw!"); break;
+                case "1" -> hhs.lijstExamen();
+                case "2" -> hhs.lijstStudenten();
+                case "3" -> hhs.makenStudent();
+                case "4" -> hhs.verwijderStudent();
+                case "5" -> hhs.maakExamen();
+                case "6" -> hhs.welkeExamensGehaald();
+                case "7" -> hhs.meesteExamensGehaald();
+                case "0" -> System.out.println("Fijne dag nog verder!");
+                default -> System.out.println("Probeer het opnieuw!");
             }
         }
 
