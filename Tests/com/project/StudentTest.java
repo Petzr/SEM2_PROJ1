@@ -13,6 +13,7 @@ class StudentTest {
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         Student daner = new Student("Daner");
         daner.addGeslaagdExamen(wiskunde);
+
         String expected = "WiskundeExamenVragen.txt";
 
         String actual = daner.getGeslaagdeExamen().get(0).getNaam();
@@ -24,6 +25,7 @@ class StudentTest {
     void toonBehaaldeExamens() {
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
+
         Student daner = new Student("Daner");
         daner.addGeslaagdExamen(engels);
         daner.addGeslaagdExamen(wiskunde);
@@ -53,6 +55,10 @@ class StudentTest {
 
     @Test
     void zoekStudent() {
+        Student daner = new Student("Daner");
+
+        assertTrue(daner.testZoekStudent(10000001));
+        assertFalse(daner.testZoekStudent(10000069));
     }
 
     @Test
