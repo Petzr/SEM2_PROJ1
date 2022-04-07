@@ -104,14 +104,23 @@ public class School {
         }
 
         // keuze welk examen gemaakt word
-        System.out.println("Welke examen wil je maken? engels/wiskunde");
-        String keuze = scanner.nextLine();
-        Examen examen = null;
-        if (keuze.equals("wiskunde")) {
-            examen = alleExamens.get(1);
-        } else if (keuze.equals("engels")) {
-            examen = alleExamens.get(0);
+        System.out.println("Welke examen wil je maken?");
+        for (int i=0; i<alleExamens.size(); i++) {
+            System.out.printf("%2d) %s\n", i+1, alleExamens.get(i).getNaam());
         }
+        Examen examen = null;
+        try {
+            int keuze = scanner.nextInt();
+            scanner.nextLine();
+
+            examen = alleExamens.get(keuze-1);
+
+        } catch (Exception e) {
+            System.out.println("Geen correcte keuze");
+            System.out.println("probeer het opnieuw");
+            return;
+        }
+
 
         // examen afnemen
         if (examen != null) {
