@@ -82,7 +82,7 @@ public class Student {
     }
 
 
-    public Boolean testZoekStudent(int nummer)
+    public Boolean testZoekStudent(int nummer) ///// TEST METHODE
     {
         // checken voor student
         if (nummer == studentenNummer)

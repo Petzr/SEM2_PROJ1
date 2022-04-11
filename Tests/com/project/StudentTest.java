@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StudentTest {
+class StudentTest
+{
 
     @Test
-    void addGeslaagdExamen() {
+    void addGeslaagdExamen()
+    {
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         Student daner = new Student("Daner");
         daner.addGeslaagdExamen(wiskunde);
@@ -22,7 +24,8 @@ class StudentTest {
     }
 
     @Test
-    void toonBehaaldeExamens() {
+    void toonBehaaldeExamens()
+    {
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
 
@@ -34,8 +37,9 @@ class StudentTest {
         String expected2 = "Wiskunde";
 
         ArrayList<String> actual = new ArrayList<>();
-        for (int i = 0; i < daner.getGeslaagdeExamen().size(); i++) {
-            actual.add(daner.getGeslaagdeExamen().get(i).getNaam().substring(0, daner.getGeslaagdeExamen().get(i).getNaam().length()-16));
+        for (int i = 0; i < daner.getGeslaagdeExamen().size(); i++)
+        {
+            actual.add(daner.getGeslaagdeExamen().get(i).getNaam().substring(0, daner.getGeslaagdeExamen().get(i).getNaam().length() - 16));
         }
 
         assertEquals(expected1, actual.get(0));
@@ -43,25 +47,11 @@ class StudentTest {
     }
 
     @Test
-    void toonStudent() {
-        Student daner = new Student("Daner");
-
-        String expected = "Daner, 10000001";
-
-        String actual = daner.getNaam() + ", " + daner.getStudentenNummer();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void zoekStudent() {
+    void zoekStudent()
+    {
         Student daner = new Student("Daner");
 
         assertTrue(daner.testZoekStudent(10000001));
         assertFalse(daner.testZoekStudent(10000069));
-    }
-
-    @Test
-    void toonMeestBehaaldeExamens() {
     }
 }

@@ -1,6 +1,5 @@
 package com.project;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,7 +50,6 @@ public class Menu {
                 default -> System.out.println("Probeer het opnieuw!");
             }
         }
-
     }
 
     public static void printMenu(ArrayList<String> menuKeuzes) {
