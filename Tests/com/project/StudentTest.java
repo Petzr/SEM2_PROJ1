@@ -54,7 +54,7 @@ class StudentTest
         Student daner = new Student("Daner");
 
         int nummer = 10000001;
-        InputStream in = new ByteArrayInputStream("nee".getBytes());
+        InputStream in = new ByteArrayInputStream("ja".getBytes());
         System.setIn(in);
 
         assertTrue(daner.zoekStudent(nummer));

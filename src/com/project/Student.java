@@ -81,25 +81,6 @@ public class Student {
         }
     }
 
-
-    public Boolean testZoekStudent(int nummer) ///// TEST METHODE
-    {
-        // checken voor student
-        if (nummer == studentenNummer)
-        {
-            // controlleren of het juiste student is
-            InputStream input = new ByteArrayInputStream("ja".getBytes());
-            if (input.equals("ja"))
-            {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-
     public void toonMeestBehaaldeExamens(int meesteExamens) {
 
         if (getGeslaagdeExamen().size() >= meesteExamens) {
