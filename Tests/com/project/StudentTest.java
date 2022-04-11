@@ -28,6 +28,11 @@ class StudentTest
     @Test
     void toonBehaaldeExamens()
     {
+        // arrange
+        String expected1 = "Engels";
+        String expected2 = "Wiskunde";
+
+        // act
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
 
@@ -35,8 +40,6 @@ class StudentTest
         daner.addGeslaagdExamen(engels);
         daner.addGeslaagdExamen(wiskunde);
 
-        String expected1 = "Engels";
-        String expected2 = "Wiskunde";
 
         ArrayList<String> actual = new ArrayList<>();
         for (int i = 0; i < daner.getGeslaagdeExamen().size(); i++)
@@ -44,6 +47,7 @@ class StudentTest
             actual.add(daner.getGeslaagdeExamen().get(i).getNaam().substring(0, daner.getGeslaagdeExamen().get(i).getNaam().length() - 16));
         }
 
+        // assert
         assertEquals(expected1, actual.get(0));
         assertEquals(expected2, actual.get(1));
     }
