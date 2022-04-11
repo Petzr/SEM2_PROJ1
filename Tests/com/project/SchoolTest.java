@@ -153,19 +153,19 @@ class SchoolTest {
     @Test
     void meesteExamensGehaald() {
         // arrange
-        ArrayList<Student> alleStudenten = new ArrayList<>();
+        School school = new School();
         student.addGeslaagdExamen(examen);
-        alleStudenten.add(student);
-        alleStudenten.add(new Student("Daner"));
-        alleStudenten.add(new Student("Dwayne"));
+        school.addStudent(student);
+        school.addStudent(new Student("Daner"));
 
-        ArrayList<Student> gehaaldStudenten = new ArrayList<>();
-        ArrayList<Student> echtGehaaldeStudenten = new ArrayList<>();
-        echtGehaaldeStudenten.add(student);
+        ArrayList<Student> expected = new ArrayList<>();
+        expected.add(student);
+
 
         // act
+        ArrayList<Student> actual = new ArrayList<>();
         int meesteExamens = 0;
-        for (Student student : alleStudenten) {
+        for (Student student : school.getAlleStudenten()) {
 
             int examensGehaald = student.getGeslaagdeExamen().size();
             if (examensGehaald >= meesteExamens) {
@@ -173,14 +173,14 @@ class SchoolTest {
             }
         }
 
-        for (Student student : alleStudenten) {
-            student.toonMeestBehaaldeExamens(meesteExamens);
-            gehaaldStudenten.add(student);
+        for (Student student : school.getAlleStudenten()) {
+            if (student.getGeslaagdeExamen().size() >= meesteExamens) {
+                actual.add(student);
+            }
         }
 
-
         // assert
-        assertEquals(echtGehaaldeStudenten, gehaaldStudenten);
+        assertEquals(expected, actual);
 
     }
 }
