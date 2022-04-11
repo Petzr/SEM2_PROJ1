@@ -2,6 +2,8 @@ package com.project;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,7 +53,10 @@ class StudentTest
     {
         Student daner = new Student("Daner");
 
-        assertTrue(daner.testZoekStudent(10000001));
-        assertFalse(daner.testZoekStudent(10000069));
+        int nummer = 10000001;
+        InputStream in = new ByteArrayInputStream("nee".getBytes());
+        System.setIn(in);
+
+        assertTrue(daner.zoekStudent(nummer));
     }
 }
