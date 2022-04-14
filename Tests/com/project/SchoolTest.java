@@ -2,6 +2,8 @@ package com.project;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -78,24 +80,19 @@ class SchoolTest {
     @Test
     void verwijderStudent() {
         // arrange
-        ArrayList<Student> alleStudenten = new ArrayList<>();
-        alleStudenten.add(student);
-        alleStudenten.add(new Student("Daner"));
-        alleStudenten.add(new Student("Dwayne"));
+        school.addStudent(student);
+        school.addStudent(new Student("Daner"));
+        school.addStudent(new Student("Dwayne"));
 
         // act
-        System.out.print("Geef het studentnummer: \n");
-        int nummer = 10000001;
-        for (int i = 0; i < alleStudenten.size(); i++) {
-            if (nummer == alleStudenten.get(i).getStudentenNummer()) {
-                System.out.println(alleStudenten.get(i).getNaam() + " verwijdert.");
-                alleStudenten.remove(i);
-                break;
-            }
-        }
+        InputStream inputStream = new ByteArrayInputStream("10000002".getBytes());
+        System.setIn(inputStream);
+
+        school.verwijderStudent();
+
 
         // assert
-        assertEquals(2, alleStudenten.size());
+        assertEquals(2, school.getAlleStudenten().size());
 
     }
 
@@ -153,7 +150,6 @@ class SchoolTest {
     @Test
     void meesteExamensGehaald() {
         // arrange
-        School school = new School();
         student.addGeslaagdExamen(examen);
         school.addStudent(student);
         school.addStudent(new Student("Daner"));
