@@ -11,9 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExamenTest {
 
-
-
-
     @Test
     public void toonExamenInfoTest() {
         // arrange
@@ -33,12 +30,6 @@ class ExamenTest {
 
 
     }
-
-
-
-    void examenAfnemen() {
-
- }
 
     @Test
     void isGeslaagdVoorExamenTest() {
