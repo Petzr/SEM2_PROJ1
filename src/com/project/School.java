@@ -7,17 +7,8 @@ public class School {
     private ArrayList<Examen> alleExamens = new ArrayList<>();
     private ArrayList<Student> alleStudenten = new ArrayList<>();
 
-    public School(ArrayList<Examen> alleExamens, ArrayList<Student> alleStudenten) {
-        this.alleExamens = alleExamens;
-        this.alleStudenten = alleStudenten;
-    }
-
     public School() {
 
-    }
-
-    public School(ArrayList<Student> alleStudenten) {
-        this.alleStudenten = alleStudenten;
     }
 
     public ArrayList<Examen> getAlleExamens() {
