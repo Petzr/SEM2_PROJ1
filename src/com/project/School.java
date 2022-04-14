@@ -98,7 +98,7 @@ public class School {
         for (int i=0; i<alleExamens.size(); i++) {
             System.out.printf("%2d) %s\n", i+1, alleExamens.get(i).getNaam());
         }
-        Examen examen = null;
+        Examen examen;
         try {
             int keuze = scanner.nextInt();
             scanner.nextLine();
