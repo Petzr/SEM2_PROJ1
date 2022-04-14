@@ -53,33 +53,13 @@ class ExamenTest {
  }
 
     @Test
-    void isGeslaagdVoorExamenTest() { // ik(Peter) snap niet waarom je het zo lastig voor jezelf hebt gemaakt
+    void isGeslaagdVoorExamenTest() {
         // arrange
-        boolean expected1 = true;
-        boolean expected2 = false;
-        boolean actual1;
-        boolean actual2;
+        Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
+        // act
+        boolean actual = engels.isGeslaagdVoorExamen(8);
 
         // act
-        if (8 > 10 / 2) {
-            System.out.println("Goed gedaan, je hebt het examen gehaald.");
-            actual1 = true;
-        } else {
-            System.out.println("Helaas, je hebt het examen niet gehaald.");
-            actual2 = false;
-        }
-
-        if (4 > 10 / 2) {
-            System.out.println("Goed gedaan, je hebt het examen gehaald.");
-            actual1 = true;
-        } else {
-            System.out.println("Helaas, je hebt het examen niet gehaald.");
-            actual2 = false;
-
-        }
-
-        // act
-        assertEquals(expected1, actual1);
-        assertEquals(expected2, actual2);
+        assertTrue(actual);
     }
 }

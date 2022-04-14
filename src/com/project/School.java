@@ -90,7 +90,6 @@ public class School {
                 System.out.println("Geen getal ingevoerd");
                 return null;
             }
-
         }
     }
 
