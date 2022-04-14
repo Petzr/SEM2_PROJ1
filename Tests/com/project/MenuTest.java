@@ -12,5 +12,6 @@ class MenuTest {
 
     @Test
     void printMenu() {
+
     }
 }

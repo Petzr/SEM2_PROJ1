@@ -12,7 +12,6 @@ public class Student {
     private static Integer uniekNummer = 10000000;
 
     private ArrayList<Examen> geslaagdVoorExamens = new ArrayList<>();
-    private static ArrayList<Integer> alleStudentenNummers = new ArrayList<>();
 
     public Student(String naam) {
         this.naam = naam;
@@ -52,9 +51,6 @@ public class Student {
 
     public ArrayList<Examen> getGeslaagdeExamen() {
         return geslaagdVoorExamens;
-    }
-    public static ArrayList<Integer> getAlleStudentenNummers() {
-        return alleStudentenNummers;
     }
 
     public void addGeslaagdExamen(Examen examen) {
