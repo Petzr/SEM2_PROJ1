@@ -13,15 +13,15 @@ public class Student {
 
     private ArrayList<Examen> geslaagdVoorExamens = new ArrayList<>();
 
-    public Student(String naam) {
-        this.naam = naam;
-        this.studentenNummer = getUniekNummer();
-    }
-
     public Student() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Voer hier je naam in: ");
         this.naam = scanner.nextLine();
+        this.studentenNummer = getUniekNummer();
+    }
+
+    public Student(String naam) {
+        this.naam = naam;
         this.studentenNummer = getUniekNummer();
     }
 
@@ -37,6 +37,11 @@ public class Student {
     public int getStudentenNummer() {
         return studentenNummer;
     }
+
+    public ArrayList<Examen> getGeslaagdeExamen() {
+        return geslaagdVoorExamens;
+    }
+
     public void toonBehaaldeExamens(){
         System.out.println(getGeslaagdeExamen().size() >= 1 ? "Je hebt de volgende examens gehaald:" : "Je hebt geen examens gehaald.");
 
@@ -47,10 +52,6 @@ public class Student {
     public void toonStudent(){
 
         System.out.println(getNaam() + ", " + getStudentenNummer());
-    }
-
-    public ArrayList<Examen> getGeslaagdeExamen() {
-        return geslaagdVoorExamens;
     }
 
     public void addGeslaagdExamen(Examen examen) {

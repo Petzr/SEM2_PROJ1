@@ -30,6 +30,10 @@ public class School {
         alleExamens.add(examen);
     }
 
+    public void addStudent(Student student) {
+        alleStudenten.add(student);
+    }
+
     public void lijstStudenten() {
         System.out.println("Lijst met studenten:");
         for (Student student : alleStudenten) {
@@ -37,9 +41,7 @@ public class School {
         }
     }
 
-    public void addStudent(Student student) {
-        alleStudenten.add(student);
-    }
+
 
     public void makenStudent() {
         alleStudenten.add(new Student());

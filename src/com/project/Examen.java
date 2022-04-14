@@ -10,6 +10,16 @@ public class Examen {
     private String naam;
     private ArrayList<Vraag> vragen = new ArrayList<>();
 
+    public String getNaam() {
+        return naam;
+    }
+    public ArrayList<Vraag> getVragen() {
+        return vragen;
+    }
+    public int getAantalVragen() {
+        return vragen.size();
+    }
+
     public Examen(String pathname) {
 
         try {
@@ -28,16 +38,6 @@ public class Examen {
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-    public ArrayList<Vraag> getVragen() {
-        return vragen;
-    }
-    public int getAantalVragen() {
-        return vragen.size();
     }
 
     public boolean examenAfnemen() {
@@ -79,8 +79,6 @@ public class Examen {
 
     public void toonExamenInfo() {
         System.out.printf("Examen naam: %s, aantal vragen bij examen: %d\n", getNaam(), getVragen().size());
-
     }
-
 }
 
