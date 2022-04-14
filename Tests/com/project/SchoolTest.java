@@ -74,6 +74,7 @@ class SchoolTest {
         // assert
         assertEquals(2, school.getAlleStudenten().size());
 
+
     }
 
     @Test

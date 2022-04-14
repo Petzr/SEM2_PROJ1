@@ -10,20 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExamenTest {
-    private ArrayList<Vraag> vragen = new ArrayList<>();
-    private String naam;
 
-    public String getNaam() {
-        return naam;
-    }
 
-    public ArrayList<Vraag> getVragen() {
-        return vragen;
-    }
-
-    public int getAantalVragen() {
-        return vragen.size();
-    }
 
 
     @Test
