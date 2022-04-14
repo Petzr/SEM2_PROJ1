@@ -58,26 +58,6 @@ class SchoolTest {
     }
 
     @Test
-    void addStudent() {
-        // arrange
-
-        // act
-
-        // assert
-
-    }
-
-    @Test
-    void makenStudent() {
-        // arrange
-
-        // act
-
-        // assert
-
-    }
-
-    @Test
     void verwijderStudent() {
         // arrange
         school.addStudent(student);
@@ -99,27 +79,32 @@ class SchoolTest {
     @Test
     void checkStudent()
     {
+        school.addStudent(student);
 
-    }
+        Student student1 = null;
+        // vragen naar student
+        System.out.print("Geef het studentnummer: ");
+        int nummer;
+        try {
+            nummer = 10000001; // normaal met scanner ingevoerd
 
-    @Test
-    void maakExamen() {
-        // arrange
+            // checken voor student
+            for (Student student : school.getAlleStudenten()) {
+                // zoeken naar juiste student in alleStudenten
 
-        // act
+                InputStream in = new ByteArrayInputStream("ja".getBytes());
+                System.setIn(in);
 
-        // assert
+                if (student.zoekStudent(nummer)) {
+                    student1 = student;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Geen getal ingevoerd");
+            student1 = null;
+        }
 
-    }
-
-    @Test @Disabled
-    void welkeExamensGehaald() {
-        // arrange
-
-        // act
-
-        // assert
-
+        assertEquals(student, student1);
     }
 
     @Test
