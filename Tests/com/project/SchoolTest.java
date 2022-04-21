@@ -58,7 +58,7 @@ class SchoolTest {
     }
 
     @Test
-    void verwijderStudent() {
+    void verwijderStudent() { // test het verwijderen van een student door input uit console
         // arrange
         school.addStudent(student);
         school.addStudent(new Student("Daner"));
@@ -78,7 +78,7 @@ class SchoolTest {
     }
 
     @Test
-    void checkStudent()
+    void checkStudent() // test of het opvragen van de juiste student goed verloopt door input uit de console
     {
         school.addStudent(student);
 
@@ -109,7 +109,7 @@ class SchoolTest {
     }
 
     @Test
-    void meesteExamensGehaald() {
+    void meesteExamensGehaald() { // test of daadwekelijk de gegeven student het meeste examens heeft gehaald van alle studenten
         // arrange
         student.addGeslaagdExamen(examen);
         school.addStudent(student);

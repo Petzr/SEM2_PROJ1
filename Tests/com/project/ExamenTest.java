@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ExamenTest {
 
     @Test
-    public void toonExamenInfoTest() {
+    public void toonExamenInfoTest() { // test het juiste gegeven stukje tekst van exmanes
         // arrange
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
@@ -32,7 +32,7 @@ class ExamenTest {
     }
 
     @Test
-    void isGeslaagdVoorExamenTest() {
+    void isGeslaagdVoorExamenTest() { // test of het juiste aantal behaalde punten ook gelijk staat aan geslaagd
         // arrange
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         // act

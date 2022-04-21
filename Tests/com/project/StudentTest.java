@@ -12,7 +12,7 @@ class StudentTest
 {
 
     @Test
-    void addGeslaagdExamen()
+    void addGeslaagdExamen() // test of een geslaagd examen goed voor toegevoegd aan een student
     {
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         Student daner = new Student("Daner");
@@ -26,7 +26,7 @@ class StudentTest
     }
 
     @Test
-    void toonBehaaldeExamens()
+    void toonBehaaldeExamens() // het test of hetgeen op het scherm ook daadwerkelijk is wat we willen
     {
         // arrange
         String expected1 = "Engels";
@@ -53,7 +53,7 @@ class StudentTest
     }
 
     @Test
-    void zoekStudent()
+    void zoekStudent() // het controleren of jij ook echt de student bent
     {
         Student daner = new Student("Daner");
 
