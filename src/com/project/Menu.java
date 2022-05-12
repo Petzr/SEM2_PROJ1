@@ -10,10 +10,12 @@ public class Menu {
 
         School hhs = new School();
 
+        Examen aardrijkskunde = new Examen("Resources/AardrijkskundeExamenvragenMQC.txt");
         Examen engels = new Examen("Resources/EngelsExamenVragen.txt");
         Examen wiskunde = new Examen("Resources/WiskundeExamenVragen.txt");
         hhs.addExamen(engels);
         hhs.addExamen(wiskunde);
+        hhs.addExamen(aardrijkskunde);
 
         Student student1 = new Student("Peter");
         Student student2 = new Student("Daner");
@@ -37,6 +39,7 @@ public class Menu {
         while (!input.equals("0")) {
             printMenu(menuKeuzes);
             input = scanner.nextLine();
+            
 
             switch (input) {
                 case "1" -> hhs.lijstExamen();

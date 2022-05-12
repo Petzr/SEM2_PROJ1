@@ -3,6 +3,7 @@ package com.project;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Examen {
@@ -13,9 +14,11 @@ public class Examen {
     public String getNaam() {
         return naam;
     }
+
     public ArrayList<Vraag> getVragen() {
         return vragen;
     }
+
     public int getAantalVragen() {
         return vragen.size();
     }
@@ -30,11 +33,44 @@ public class Examen {
             naam = file.getName();
 
             // aanmaken van de vragen in de file
-            while (scanner.hasNext()) {
-                Vraag vraag = new Vraag(scanner.nextLine(), scanner.nextLine());
-                vragen.add(vraag);
+            if (naam.contains("MQC")) {
+                while (scanner.hasNext()) {
+                    String VraagString = scanner.nextLine();
+                    if (VraagString.contains("?")) {
 
+
+                        String Antwoord = VraagString;
+                        Antwoord = Antwoord.substring(Antwoord.indexOf("(") + 1);
+                        Antwoord = Antwoord.substring(0, Antwoord.indexOf(")"));
+
+                        if (Antwoord.toLowerCase().equals("a") || Antwoord.toLowerCase().equals("b") || Antwoord.toLowerCase().equals("c") || Antwoord.toLowerCase().equals("d")) {
+                        // 4x scanner.nextline voor het uitprinten van antwoordopties A t/m D.
+                            List optieLijst = new ArrayList();
+                            optieLijst.add(scanner.nextLine());
+                            optieLijst.add(scanner.nextLine());
+                            optieLijst.add(scanner.nextLine());
+                            optieLijst.add(scanner.nextLine());
+
+                            Vraag vraag = new MQC(VraagString.substring(0, VraagString.length() - 3), Antwoord, optieLijst);
+                            vragen.add(vraag);
+                        } else {
+
+                            Vraag vraag = new Vraag(VraagString.substring(0, VraagString.length() - 3), scanner.nextLine());
+                            vragen.add(vraag);
+
+                        }
+                    }
+
+
+                }
+            } else {
+                while (scanner.hasNext()) {
+                    Vraag vraag = new Vraag(scanner.nextLine(), scanner.nextLine());
+                    vragen.add(vraag);
+
+                }
             }
+
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
@@ -45,8 +81,8 @@ public class Examen {
 
         // welkom bericht voor het maken van het exmanen
         System.out.println("\n\n\n\n\n\n*************************************");
-        System.out.println("Welkom bij het examen "+ getNaam());
-        System.out.println("Het examen heeft "+ getVragen().size() +" vragen. Succes");
+        System.out.println("Welkom bij het examen " + getNaam());
+        System.out.println("Het examen heeft " + getVragen().size() + " vragen. Succes");
         System.out.println("Klik ENTER om te beginnen");
         scanner.nextLine();
 
@@ -59,8 +95,8 @@ public class Examen {
         // einde examen met puntentelling en bericht
         System.out.println("*************************************");
         System.out.println("Dat was het einde van het examen.");
-        System.out.println("Je hebt "+ vragenGoed +" vragen goed.");
-        System.out.println("Je hebt meer dan "+ getAantalVragen()/2 +" antwoorden goed nodig om te slagen.");
+        System.out.println("Je hebt " + vragenGoed + " vragen goed.");
+        System.out.println("Je hebt meer dan " + getAantalVragen() / 2 + " antwoorden goed nodig om te slagen.");
         System.out.println("Klik ENTER om te sluiten");
         scanner.nextLine();
 
@@ -68,7 +104,7 @@ public class Examen {
     }
 
     public boolean isGeslaagdVoorExamen(int punten) {
-        if (punten > getAantalVragen()/2) {
+        if (punten > getAantalVragen() / 2) {
             System.out.println("Goed gedaan, je hebt het examen gehaald.");
             return true;
         } else {
