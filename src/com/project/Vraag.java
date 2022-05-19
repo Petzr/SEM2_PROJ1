@@ -1,9 +1,6 @@
 package com.project;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Vraag {
     protected String vraag;
@@ -38,6 +35,7 @@ public class Vraag {
         System.out.println(this.vraag);
     }
 
+
 }
 
 class MQC extends Vraag {
@@ -59,6 +57,8 @@ class MQC extends Vraag {
              System.out.println(letters.get(count++) + ". " + optie);
          }
     }
+
+
 
 
 }

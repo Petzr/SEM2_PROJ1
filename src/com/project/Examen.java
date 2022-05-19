@@ -3,6 +3,7 @@ package com.project;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,6 +17,8 @@ public class Examen {
     }
 
     public ArrayList<Vraag> getVragen() {
+        Collections.shuffle(vragen); // Zorgt ervoor dat er een willekeurige volgorde zit in de vragen.
+
         return vragen;
     }
 
@@ -117,4 +120,6 @@ public class Examen {
         System.out.printf("Examen naam: %s, aantal vragen bij examen: %d\n", getNaam(), getVragen().size());
     }
 }
+
+
 
