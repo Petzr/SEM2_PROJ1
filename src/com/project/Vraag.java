@@ -38,27 +38,3 @@ public class Vraag {
 
 }
 
-class MQC extends Vraag {
-    List Antwoorden;
-
-    public MQC(String vraag, String antwoord, List Antwoorden) {
-        super(vraag, antwoord);
-        this.Antwoorden = Antwoorden;
-    }
-
-    @Override
-    public void stelVraag() {
-        List letters = Arrays.asList("A","B","C","D");
-
-        System.out.println(this.vraag);
-
-        int count = 0;
-         for(Object optie : Antwoorden){
-             System.out.println(letters.get(count++) + ". " + optie);
-         }
-    }
-
-
-
-
-}

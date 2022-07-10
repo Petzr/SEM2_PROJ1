@@ -46,6 +46,7 @@ public class Examen {
                         Antwoord = Antwoord.substring(Antwoord.indexOf("(") + 1);
                         Antwoord = Antwoord.substring(0, Antwoord.indexOf(")"));
 
+                        //Hier wordt gecheckt of de vraag een MQC is.
                         if (Antwoord.toLowerCase().equals("a") || Antwoord.toLowerCase().equals("b") || Antwoord.toLowerCase().equals("c") || Antwoord.toLowerCase().equals("d")) {
                         // 4x scanner.nextline voor het uitprinten van antwoordopties A t/m D.
                             List optieLijst = new ArrayList();
@@ -54,10 +55,11 @@ public class Examen {
                             optieLijst.add(scanner.nextLine());
                             optieLijst.add(scanner.nextLine());
 
+                            //Vraag,correcte antwoord, antwoorden.
                             Vraag vraag = new MQC(VraagString.substring(0, VraagString.length() - 3), Antwoord, optieLijst);
                             vragen.add(vraag);
                         } else {
-
+                            //Vraag,correct antwoord.
                             Vraag vraag = new Vraag(VraagString.substring(0, VraagString.length() - 3), scanner.nextLine());
                             vragen.add(vraag);
 
